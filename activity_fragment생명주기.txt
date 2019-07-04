@@ -1,0 +1,47 @@
+activity /fragment 생명주기
+
+#Activity
+
+1.on create
+ 최초실행될 때 호출 ,액티비티에 필요한 리소스 초기화
+2.on start
+유저에게 액티비티가 보이도록 ,매우빠르게 끝나고 on resume로 들어간다.
+보통 broadcastReceiver는 이 단계에 등록
+3. on resume와 on pause
+ onresume에서 유저와 인터랙션 이 때 전화오거 이동하면 pause호출 그러다 돌아오면resume
+foreground->onresume
+onresume에서는 카메라 리소스와같이 화면이 포커스를 가지고 있는 경우에만 사용할 리소스들을
+초기화해주 onpause에서 해제해 주어야한다.
+동적으로 생성하거나 sensormanager로 gps를 사용하거나 하는경우에는 onpause시에 리소스를
+해제해주면 배터리소모를 막을 수 있다.
+주의할 점은
+onpause에서 데이터를 저장하거나 네트워크를 호출하고 데이터베이스를 실행하면 안된다.
+충분한시간을 가지지 못하기 때문에 이런 무거운 일을 onstop에서해라
+4. onstop
+
+activity object가 메모리에만 남아있고 window manager에서는 attach되어있지 않아서 데이터가 있다면
+다시복원할 수 있는 상태 
+
+#fragment
+
+1.on attach 
+fragment가 activity에 attach될 때 호출 
+호출인자로 context 주어진다 
+2.oncreate 
+ 액티비티와 마찬가지고 초기화해야하는 리소스 초기화
+프래그먼트를 생성하면서 넘겨준 값들이 있다면 , 여기서 변수에 넣어주면된다 여기서 ui초기화
+할 수 없음
+3.oncreateview
+layout을 inflate하는 곳이다 view객체를 얻을수 으므로 여기서view와 관련해서 버튼등 초기화가능
+4.onactivitycreated
+fragment에서의 oncreate view를 마치고 activity에서 oncreate()가 호출되고 나서 호출되는 메소드
+activity와 fragment의 뷰가 모두 생성된 상태로 view를 변경하는 작업이 가능한 단계
+5. onstart 
+activity에서의 역할과 비슷
+6.onresume
+activity와 비슷 유저와 상호작용이 가능하게되는 부분
+6.on pause 
+프래그먼트의 부모액티비티가아닌 다른 액티비티가 foregorund로 나오게되면 콜
+6.ondestroyview
+프래그먼트와 관련된view가 제거되는 단계 
+ondestroy
