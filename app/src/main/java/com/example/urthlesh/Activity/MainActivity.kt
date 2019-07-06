@@ -36,9 +36,6 @@ class MainActivity : AppCompatActivity() {
             var intent = Intent(this, CameraActivity::class.java)
             startActivity(intent)
         }*/
-
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
         setToolbarVisibility(View.GONE)
         configureMainTab()
     }

@@ -61,7 +61,10 @@
                             android:layout_alignParentLeft="true"></ImageView>
                 </LinearLayout>
 
-                <Button android:layout_width="10dp" android:layout_height="10dp"
+                <Button
+
+                        android:id="@+id/btnHomeSync"
+                        android:layout_width="50dp" android:layout_height="50dp"
 
                         android:layout_alignParentRight="true"
                         android:layout_alignParentBottom="true"

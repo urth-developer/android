@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.LinearSnapHelper
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,7 +17,9 @@ import com.example.urthlesh.Adapter.IndicatorAdapter
 import com.example.urthlesh.Adapter.RVChallengeAdapter
 import com.example.urthlesh.Data.HomechallengeData
 import com.example.urthlesh.R
+import com.example.urthlesh.custom_camera.CameraActivity
 import kotlinx.android.synthetic.main.fragment_home.*
+import org.jetbrains.anko.startActivity
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -42,6 +45,15 @@ class HomeFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        btnHomeSync.setOnClickListener {
+            context!!.startActivity<CameraActivity>()
+            Log.i("jahyunTag", "GoThrough")
+        }
+
+
+
+
+
         var dataList: ArrayList<HomechallengeData> = ArrayList()
         //var challengedataList:ArrayList<ChallengeData> = ArrayList()
         dataList.add(

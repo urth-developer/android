@@ -34,7 +34,7 @@
             android:textStyle="bold"/>
 
 
-    <com.example.jahyunurth.CustomView.RectangleImageView
+    <com.example.urthlesh.CustomView.RectangleImageView
                 android:id="@+id/preview"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
