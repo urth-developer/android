@@ -14,10 +14,7 @@ import com.example.urthlesh.R
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- *
- */
+
 class MypageFragment : Fragment() {
 
     override fun onCreateView(

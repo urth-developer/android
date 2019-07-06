@@ -14,7 +14,6 @@ import cdflynn.android.library.turn.TurnLayoutManager
 import com.example.urthlesh.Adapter.ChallengeRecyclerViewMainAdapter
 import com.example.urthlesh.Adapter.IndicatorAdapter
 import com.example.urthlesh.Adapter.RVChallengeAdapter
-import com.example.urthlesh.Data.ChallengeData
 import com.example.urthlesh.Data.HomechallengeData
 import com.example.urthlesh.R
 import kotlinx.android.synthetic.main.fragment_home.*
@@ -44,7 +43,7 @@ class HomeFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         var dataList: ArrayList<HomechallengeData> = ArrayList()
-        var challengedataList:ArrayList<ChallengeData> = ArrayList()
+        //var challengedataList:ArrayList<ChallengeData> = ArrayList()
         dataList.add(
             HomechallengeData(
                 "",
@@ -72,22 +71,8 @@ class HomeFragment : Fragment() {
         challengeRecyclerViewMainAdapter= ChallengeRecyclerViewMainAdapter(context!!,dataList)
         rv_home_challenge.adapter=challengeRecyclerViewMainAdapter
         rv_home_challenge.layoutManager=TurnLayoutManager(context!!,TurnLayoutManager.Gravity.START,TurnLayoutManager.Orientation.HORIZONTAL,1200,200,true)
-        challengedataList.add(
-            ChallengeData("http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
-                "챌린지1","eunbin",2)
-        )
-        challengedataList.add(
-            ChallengeData("http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
-                "챌린지2","eunbin",2)
-        )
-        challengedataList.add(
-            ChallengeData("http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
-                "챌린지3","eunbin",2)
-        )
-        rvChallengeAdapter=RVChallengeAdapter(context!!,challengedataList)
-        rv_home_magazinechallenge.adapter=rvChallengeAdapter
-        rv_home_magazinechallenge.layoutManager=LinearLayoutManager(context!!)
-        val indexAdapter = IndicatorAdapter(context!!, dataList)
+
+         val indexAdapter = IndicatorAdapter(context!!, dataList)
         rv_home_dot.adapter=indexAdapter
         rv_home_dot.layoutManager=LinearLayoutManager(context!!,LinearLayout.HORIZONTAL,false)
         val snapHelper=LinearSnapHelper()
