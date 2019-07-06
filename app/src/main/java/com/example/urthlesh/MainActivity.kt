@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.RelativeLayout
+import com.example.urthlesh.Adapter.ProductMainPagerAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -16,7 +17,7 @@ class MainActivity : AppCompatActivity() {
     }
     private fun configureMainTab()
     {
-        vp_main.adapter=ProductMainPagerAdapter(supportFragmentManager,4)
+        vp_main.adapter= ProductMainPagerAdapter(supportFragmentManager, 4)
         vp_main.offscreenPageLimit=2
         tl_main.setupWithViewPager(vp_main)
 

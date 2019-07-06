@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".CategoryDetailActivity">
+    <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp">
+            <ImageView
+                    android:src="@drawable/ic_backarrow"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp" android:id="@+id/btn_back_category_detail"/>
+            <TextView
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="9dp"
+                    android:textSize="18sp"
+                    android:textColor="#53565b"
+                    android:layout_width="66dp"
+                    android:layout_height="27dp"
+                    android:id="@+id/txt_category_title"/>
+        </LinearLayout>
+        
+
+    </RelativeLayout>
+
+</RelativeLayout>
