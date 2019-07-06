@@ -1,14 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+  xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             tools:context=".HomeFragment">
+             tools:context=".Fragment.HomeFragment">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                  android:orientation="vertical"
+    >
+        <!--============================상단=================================-->
+        <LinearLayout
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="-15dp"
+                android:layout_marginRight="-15dp"
+                android:layout_marginLeft="-15dp"
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment"/>
+                android:paddingRight="20dp"
+                android:background="@drawable/bg_main"
+        >
 
-</FrameLayout>
+            <!--로고이미지 대체-->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="Logo"
+                      android:textColor="#ffffff"
+                      android:layout_marginTop="15dp"
+                      android:layout_gravity="center_horizontal"
+
+                      android:textStyle="bold"/>
+            <RelativeLayout android:layout_width="match_parent" android:layout_height="90dp"
+                          android:gravity="bottom"
+                          android:orientation="horizontal">
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                              android:orientation="vertical"
+
+                              android:layout_alignParentBottom="true">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                              android:text="딸기누나 님이"
+                              android:textColor="#ffffff"
+
+
+                    />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                              android:text="함께하는 챌린지"
+                              android:textColor="#ffffff"
+
+
+                    />
+                    <ImageView
+                            android:layout_width="20dp" android:layout_height="2dp"
+                          android:background="#ffffff"
+                            android:layout_marginTop="10dp"
+                          android:layout_alignParentLeft="true"></ImageView>
+                </LinearLayout>
+
+                <Button android:layout_width="10dp" android:layout_height="10dp"
+
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:background="#ffffff"/>
+                </RelativeLayout>
+            <!--=================RecyclerView 시작===================-->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+
+
+            <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_home_challenge"
+                    android:layout_width="match_parent"
+                                                    android:layout_height="300dp"></android.support.v7.widget.RecyclerView>
+            <android.support.v7.widget.RecyclerView
+                    android:layout_gravity="center"
+                    android:id="@+id/rv_home_dot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+            </LinearLayout>
+            </LinearLayout>
+        <!--===========라운드 상단===============-->
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:src="@drawable/img_main_yame"
+        />
+
+            <!--========뭐가 바뀐대 ============-->
+
+
+            <!--========금주의 테마===========-->
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:src="@drawable/img_line_long"
+            />
+            <TextView
+                    android:id="@+id/txt_home_themename"
+                    android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                       android:text="테마명"
+                      android:textSize="16dp"
+                      android:layout_marginVertical="15dp"
+                      android:textColor="#15696c"
+            />
+        <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_home_magazinechallenge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+
+        </LinearLayout>
+
+
+
+
+
+</ScrollView>

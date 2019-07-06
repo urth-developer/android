@@ -1,4 +1,4 @@
-package com.example.urthlesh
+package com.example.urthlesh.Activity
 
 import android.os.Bundle
 import android.support.v4.view.ViewPager
@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.RelativeLayout
 import com.example.urthlesh.Adapter.ProductMainPagerAdapter
+import com.example.urthlesh.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -14,6 +15,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setToolbarVisibility(View.GONE)
         configureMainTab()
     }
     private fun configureMainTab()
