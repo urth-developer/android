@@ -31,7 +31,7 @@ class LoginActivity : AppCompatActivity() {
 
     fun postLoginResponse(u_id:String,u_pw:String)
     {
-        SharedPreferenceControler.setUserID(this,u_id)
+
 
     }
 }
