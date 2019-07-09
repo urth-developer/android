@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+    <ImageButton
+            android:id="@+id/backbackback"
+            android:layout_marginTop="5dp"
+            android:contentDescription="@string/description_info"
+            style="@android:style/Widget.Material.Light.Button.Borderless"
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="left"
+            android:src="@drawable/ic_backarrow" />
+
+    <TextView
+            android:id="@+id/txt_toolbar_product_title"
+            android:text="인증하기"
+            android:paddingLeft="50dp"
+            android:paddingTop="15dp"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:textSize="16dp"
+            android:textColor="#484848"
+            android:textStyle="bold"/>
+
+
+
+    <com.example.urthlesh.custom_camera.AutoFitTextureView
+            android:id="@+id/texture"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="62dp" />
+
+    <FrameLayout
+            android:id="@+id/control"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:background="#ffffff">
+
+
+
+        <ImageButton
+                android:id="@+id/picture"
+                android:contentDescription="@string/description_info"
+                style="@android:style/Widget.Material.Light.Button.Borderless"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:scaleType="fitXY"
+                android:adjustViewBounds="true"
+                android:src="@drawable/btn_camera" />
+
+
+    </FrameLayout>
+
+</RelativeLayout>
