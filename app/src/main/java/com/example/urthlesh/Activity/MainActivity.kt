@@ -1,25 +1,100 @@
 package com.example.urthlesh.Activity
 
+import android.Manifest
+import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
+import android.support.v4.app.ActivityCompat
+import android.support.v4.content.ContextCompat
 import android.support.v4.view.ViewPager
 import android.support.v7.app.AppCompatActivity
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.RelativeLayout
+import android.widget.Toast
 import com.example.urthlesh.Adapter.ProductMainPagerAdapter
 
 import com.example.urthlesh.R
 
 import kotlinx.android.synthetic.main.activity_main.*
+import java.util.ArrayList
 
 class MainActivity : AppCompatActivity() {
+    private val permissions = arrayOf(
+        Manifest.permission.READ_EXTERNAL_STORAGE,
+        Manifest.permission.WRITE_EXTERNAL_STORAGE,
+        Manifest.permission.CAMERA
+    )
+
+    private val MULTIPLE_PERMISSIONS = 101
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        checkPermissions()
+
+        /*btn_camera.setOnClickListener {
+            var intent = Intent(this, CameraActivity::class.java)
+            startActivity(intent)
+        }*/
         setToolbarVisibility(View.GONE)
         configureMainTab()
     }
+
+
+    private fun checkPermissions(): Boolean {
+        var result: Int
+        val permissionList = ArrayList<String>()
+        for (pm in permissions) {
+            result = ContextCompat.checkSelfPermission(this, pm)
+            if (result != PackageManager.PERMISSION_GRANTED) {
+                permissionList.add(pm)
+            }
+        }
+        if (!permissionList.isEmpty()) {
+            ActivityCompat.requestPermissions(this, permissionList.toTypedArray(), MULTIPLE_PERMISSIONS)
+            return false
+        }
+        return true
+    }
+
+
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
+        when (requestCode) {
+            MULTIPLE_PERMISSIONS -> {
+                if (grantResults.size > 0) {
+                    for (i in permissions.indices) {
+                        if (permissions[i] == this.permissions[0]) {
+                            if (grantResults[i] != PackageManager.PERMISSION_GRANTED) {
+                                showNoPermissionToastAndFinish()
+                            }
+                        } else if (permissions[i] == this.permissions[1]) {
+                            if (grantResults[i] != PackageManager.PERMISSION_GRANTED) {
+                                showNoPermissionToastAndFinish()
+
+                            }
+                        } else if (permissions[i] == this.permissions[2]) {
+                            if (grantResults[i] != PackageManager.PERMISSION_GRANTED) {
+                                showNoPermissionToastAndFinish()
+
+                            }
+                        }
+                    }
+                } else {
+                    showNoPermissionToastAndFinish()
+                }
+                return
+            }
+        }
+    }
+
+
+    private fun showNoPermissionToastAndFinish() {
+        Toast.makeText(this, "권한 요청에 동의 해주셔야 이용 가능합니다. 설정에서 권한 허용 하시기 바랍니다.", Toast.LENGTH_SHORT).show()
+        finish()
+    }
+
     private fun configureMainTab()
     {
 

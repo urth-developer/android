@@ -13,7 +13,7 @@ object SharedPreferenceControler {
     }
     fun getUseID(ctx:Context):String{
         val preferences:SharedPreferences=ctx.getSharedPreferences(MY_ACCOUNT,Context.MODE_PRIVATE)
-        return preferences.getString("u_id","")
+        return preferences.getString("u_id","")!!
 
     }
     fun clearUseID(ctx:Context){
