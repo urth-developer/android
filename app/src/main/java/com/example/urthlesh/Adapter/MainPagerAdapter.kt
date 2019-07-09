@@ -10,6 +10,7 @@ import com.example.urthlesh.Fragment.MypageFragment
 import com.example.urthlesh.Fragment.UsurthFragment
 
 class ProductMainPagerAdapter(private val ctx:Context,fm: FragmentManager, private val num_fragment:Int): FragmentStatePagerAdapter(fm){
+
     companion object {
         private  var homeFragment: HomeFragment?=null
         private var allurthFragment: AllurthFragment?=null
@@ -18,13 +19,14 @@ class ProductMainPagerAdapter(private val ctx:Context,fm: FragmentManager, priva
 
         @Synchronized
         fun getHomeFragment(): HomeFragment {
-
             if (homeFragment ==null) homeFragment = HomeFragment()
             return homeFragment!!
         }
         @Synchronized
         fun getAllurthFragment(): AllurthFragment {
+
             if (allurthFragment ==null) allurthFragment = AllurthFragment()
+
             return allurthFragment!!
         }
         @Synchronized
@@ -35,6 +37,7 @@ class ProductMainPagerAdapter(private val ctx:Context,fm: FragmentManager, priva
         }
         @Synchronized
         fun getMypageFragment(): MypageFragment {
+
             if (mypageFragment ==null) mypageFragment = MypageFragment()
             return mypageFragment!!
         }
