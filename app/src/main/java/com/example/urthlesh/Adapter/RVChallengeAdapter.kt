@@ -31,9 +31,9 @@ class RVChallengeAdapter(val ctx: Context, val dataList: ArrayList<ChallengeData
 
 
     inner class Holder(itemView: View): RecyclerView.ViewHolder(itemView){
-        var image = itemView.findViewById(R.id.img_rv_challange_image) as ImageView
-        var title = itemView.findViewById(R.id.txt_rv_challange_title) as TextView
-        var creator = itemView.findViewById(R.id.txt_rv_challange_creator) as TextView
-        var num_total = itemView.findViewById(R.id.num_rv_challange_total) as TextView
+        var image = itemView.findViewById(R.id.img_rv_challenge_image) as ImageView
+        var title = itemView.findViewById(R.id.txt_rv_challenge_title) as TextView
+        var creator = itemView.findViewById(R.id.txt_rv_challenge_creator) as TextView
+        var num_total = itemView.findViewById(R.id.num_rv_challenge_total) as TextView
     }
 }

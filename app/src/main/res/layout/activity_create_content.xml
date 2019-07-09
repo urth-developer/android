@@ -6,40 +6,60 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ChallengeCreate.ActivityCreateTitle">
-    <ImageView
-            android:background="@drawable/img_bg_makechal_3"
-            android:layout_marginLeft="-15dp"
-            android:layout_marginRight="-15dp"
-            android:layout_marginTop="-15dp"
+    <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="309dp"/>
-    <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginLeft="14dp"
-            android:layout_marginTop="14dp"
-            app:srcCompat="@drawable/ic_backarrow" android:id="@+id/btn_back"/>
-    <ImageView
-            android:src="@drawable/btn_cancel"
-            android:layout_marginLeft="320dp"
-            android:layout_marginTop="16dp"
-            android:layout_width="24dp"
-            android:layout_height="24dp" android:id="@+id/btn_cancel"/>
-    <ImageView
-            android:layout_marginLeft="265dp"
-            android:layout_marginTop="650dp"
-            android:layout_width="88dp"
-            android:layout_height="48dp"
-            android:src="@drawable/btn_next"
-            android:id="@+id/btn_next"/>
-    <EditText
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="309dp"
-            android:layout_width="320dp"
-            android:layout_height="322dp"
-            android:background="@drawable/textbox_border"
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:id="@+id/editText2"/>
+            android:layout_height="match_parent">
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:orientation="vertical">
+            <ImageView
+                    android:background="@drawable/img_bg_makechal_3"
+                    android:layout_marginLeft="-15dp"
+                    android:layout_marginRight="-15dp"
+                    android:layout_marginTop="-15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="309dp"/>
+            <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="14dp"
+                    app:srcCompat="@drawable/ic_backarrow" android:id="@+id/btn_back_create_content"/>
+            <ImageView
+                    android:src="@drawable/btn_cancel"
+                    android:layout_marginLeft="320dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp" android:id="@+id/btn_cancel_create_content"/>
+            <ImageView
+                    android:layout_marginLeft="265dp"
+                    android:layout_marginTop="605dp"
+                    android:layout_width="88dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/btn_next"
+                    android:id="@+id/btn_next_create_content"/>
+            <EditText
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="295dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="10dp"
+                    android:background="@drawable/textbox_border"
+                    android:inputType="textMultiLine"
+                    android:maxEms="10"
+                    android:minLines="8"
+                    android:lines="8"
+                    android:scrollbars="vertical"
+                    android:textColorHint="#b0b0b0"
+                    android:textSize="13sp"
+                    android:maxLength="2000"
+                    android:gravity="top|left"
+                    android:lineSpacingExtra="14dp"
+                    android:id="@+id/edit_txt_content"
+                    android:hint="1. 챌린지의 목표가 명확해야 해요.\n2. 다른 사용자들이 자발적으로 참여할 수 있는 목표를 제시해 주세요.\n3. 챌린지 진행 시 챌린지의 결과를 예측해 주세요.\n4. 행동이 무엇인지 명확해야 해요.\n5. 누구나 쉽게 참여할 수 있어야 해요.\n6. 사진으로 인증이 가능해야 해요.\n7. 현재 상태를 진단해주세요.\n8. 작성 내용이 부적절하면 챌린지 신청이 거절될 수 있어요"
+            />
+        </RelativeLayout>
+    </ScrollView>
+
 
 </RelativeLayout>

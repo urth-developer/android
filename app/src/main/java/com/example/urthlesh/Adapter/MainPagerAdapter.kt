@@ -1,14 +1,16 @@
 package com.example.urthlesh.Adapter
 
+import android.content.Context
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentStatePagerAdapter
-import com.example.urthlesh.AllurthFragment
-import com.example.urthlesh.HomeFragment
-import com.example.urthlesh.MypageFragment
-import com.example.urthlesh.UsurthFragment
+import com.example.urthlesh.Fragment.AllurthFragment
+import com.example.urthlesh.Fragment.HomeFragment
+import com.example.urthlesh.Fragment.MypageFragment
+import com.example.urthlesh.Fragment.UsurthFragment
 
-class ProductMainPagerAdapter(fm: FragmentManager, private val num_fragment:Int): FragmentStatePagerAdapter(fm){
+class ProductMainPagerAdapter(private val ctx:Context,fm: FragmentManager, private val num_fragment:Int): FragmentStatePagerAdapter(fm){
+
     companion object {
         private  var homeFragment: HomeFragment?=null
         private var allurthFragment: AllurthFragment?=null
@@ -17,14 +19,14 @@ class ProductMainPagerAdapter(fm: FragmentManager, private val num_fragment:Int)
 
         @Synchronized
         fun getHomeFragment(): HomeFragment {
-            if (homeFragment ==null) homeFragment =
-                HomeFragment()
+            if (homeFragment ==null) homeFragment = HomeFragment()
             return homeFragment!!
         }
         @Synchronized
         fun getAllurthFragment(): AllurthFragment {
-            if (allurthFragment ==null) allurthFragment =
-                AllurthFragment()
+
+            if (allurthFragment ==null) allurthFragment = AllurthFragment()
+
             return allurthFragment!!
         }
         @Synchronized
@@ -35,12 +37,13 @@ class ProductMainPagerAdapter(fm: FragmentManager, private val num_fragment:Int)
         }
         @Synchronized
         fun getMypageFragment(): MypageFragment {
-            if (mypageFragment ==null) mypageFragment =
-                MypageFragment()
+
+            if (mypageFragment ==null) mypageFragment = MypageFragment()
             return mypageFragment!!
         }
     }
     override fun getItem(p0: Int): Fragment?{
+
         return when(p0)
         {
             0-> getHomeFragment()

@@ -4,151 +4,164 @@
               xmlns:app="http://schemas.android.com/apk/res-auto"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              tools:context=".AllurthFragment"
+              tools:context=".Fragment.AllurthFragment"
               android:scaleType="fitXY"
               android:adjustViewBounds="true">
 
-<LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    <RelativeLayout android:layout_width="match_parent" android:layout_height="48dp">
-        <TextView
-                android:text="모두의 어스"
-                android:textSize="18sp"
-                android:layout_width="87dp"
-                android:layout_height="27dp"
-                android:layout_marginLeft="60dp"
-                android:layout_marginRight="213dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginBottom="9dp"
-                android:textColor="#53565b"
-                android:id="@+id/textView"/>
-        <ImageView
-                android:src="@drawable/ic_search"
-                android:layout_marginLeft="320dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginTop="14dp"
-                android:layout_marginBottom="10dp"
-                android:layout_width="24dp"
-                android:layout_height="24dp" android:id="@+id/imageView"/>
-
-    </RelativeLayout>
-    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
-                  android:orientation="vertical" android:layout_alignParentStart="true">
-        <ImageView
-                android:id="@+id/pager"
-                android:src="@drawable/img_photo_banner"
-                android:layout_width="match_parent"
-                android:layout_height="168dp"
-                android:layout_marginLeft="-15dp"
-                android:layout_marginRight="-15dp"
-                android:layout_marginTop="20dp">
-        </ImageView>
-        <TextView
-                android:text="카테고리 별 보기"
-                android:textSize="16sp"
-                android:textColor="#15696c"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="234dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginBottom="10dp"
-                android:layout_width="110dp"
-                android:layout_height="24dp"
-                android:id="@+id/textView2"/>
-        <ImageView
-                android:src="@drawable/img_differaentiate_green"
-                android:layout_width="14dp"
-                android:layout_height="2dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="330dp"
-                android:layout_marginBottom="10dp"
-                android:id="@+id/imageView7"/>
-        <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="64dp">
-            <ImageView
-                    android:src="@drawable/img_photo_category_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/imgcategory1" android:layout_weight="1"/>
-            <ImageView
-                    android:src="@drawable/img_photo_category_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/imgcategory2" android:layout_weight="1"/>
-            <ImageView
-                    android:src="@drawable/img_photo_category_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/imgcategory3" android:layout_weight="1"/>
-            <ImageView
-                    android:src="@drawable/img_photo_category_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/imgcategory4" android:layout_weight="1"/>
-            <ImageView
-                    android:src="@drawable/img_photo_category_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/imgcategory5" android:layout_weight="1"/>
-        </LinearLayout>
-        <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="41dp">
-            <TextView
-                    android:text="TextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/textView3" android:layout_weight="1"/>
-            <TextView
-                    android:text="TextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/textView7" android:layout_weight="1"/>
-            <TextView
-                    android:text="TextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/textView6" android:layout_weight="1"/>
-            <TextView
-                    android:text="TextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/textView5" android:layout_weight="1"/>
-            <TextView
-                    android:text="TextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/textView4" android:layout_weight="1"/>
-        </LinearLayout>
-        <ImageView
-                android:src="@drawable/img_line_long"
-                android:layout_width="328dp"
-                android:layout_height="1dp"
-                android:layout_marginHorizontal="16dp"
-                android:id="@+id/imageView8"/>
-        <TextView
-                android:text="인기 TOP10"
-                android:textSize="16sp"
-                android:textColor="#15696c"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="261dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="18dp"
-                android:layout_width="83dp"
-                android:layout_height="24dp"
-                android:id="@+id/textView8"/>
-        <android.support.design.widget.FloatingActionButton
-                android:src="@drawable/btn_makechallenge"
-                android:layout_marginLeft="288dp"
-                android:layout_marginRight="16dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                app:layout_anchorGravity="center"
-                android:background="@drawable/border_btn_floating"
-                android:id="@+id/btn_create" app:maxImageSize="54dp" app:backgroundTint="#14FFFFFF"/>
-    </LinearLayout>
-
-    <android.support.v7.widget.RecyclerView
-            android:id="@+id/rv_best10"
+    <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-    </android.support.v7.widget.RecyclerView>
-</LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:orientation="vertical">
+            <RelativeLayout android:layout_width="match_parent" android:layout_height="48dp">
+                <TextView
+                        android:text="모두의 어스"
+                        android:textSize="18sp"
+                        android:layout_width="87dp"
+                        android:layout_height="27dp"
+                        android:layout_marginLeft="60dp"
+                        android:layout_marginRight="213dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="9dp"
+                        android:textColor="#53565b"
+                        android:id="@+id/textView"/>
+                <ImageView
+                        android:src="@drawable/ic_search"
+                        android:layout_marginLeft="320dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="14dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp" android:id="@+id/imageView"/>
 
+            </RelativeLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                          android:orientation="vertical" android:layout_alignParentStart="true">
+
+                <RelativeLayout android:layout_width="match_parent" android:layout_height="168dp">
+                    <android.support.v4.view.ViewPager
+                            android:id="@+id/vp_advertise"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                    </android.support.v4.view.ViewPager>
+                    <android.support.design.widget.TabLayout
+                            android:id="@+id/tl_advertise_indicator"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            app:tabIndicatorHeight="0dp"
+                            app:tabGravity="center"
+                            app:tabBackground="@drawable/advertise_dot_selector">
+                    </android.support.design.widget.TabLayout>
+                </RelativeLayout>
+                <TextView
+                        android:text="카테고리 별 보기"
+                        android:textSize="16sp"
+                        android:textColor="#15696c"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="234dp"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_width="110dp"
+                        android:layout_height="24dp"
+                        android:id="@+id/textView2"/>
+                <ImageView
+                        android:src="@drawable/img_differaentiate_green"
+                        android:layout_width="14dp"
+                        android:layout_height="2dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="330dp"
+                        android:layout_marginBottom="10dp"
+                        android:id="@+id/imageView7"/>
+                <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp">
+                    <ImageView
+                            android:src="@drawable/img_photo_category_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:id="@+id/imgcategory1"
+                            android:layout_weight="1"/>
+                    <ImageView
+                            android:src="@drawable/img_photo_category_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:id="@+id/imgcategory2"
+                            android:layout_weight="1"/>
+                    <ImageView
+                            android:src="@drawable/img_photo_category_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:id="@+id/imgcategory3"
+                            android:layout_weight="1"/>
+                    <ImageView
+                            android:src="@drawable/img_photo_category_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:id="@+id/imgcategory4"
+                            android:layout_weight="1"/>
+                    <ImageView
+                            android:src="@drawable/img_photo_category_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:id="@+id/imgcategory5"
+                            android:layout_weight="1"/>
+                </LinearLayout>
+                <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="41dp">
+                    <TextView
+                            android:text="TextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:id="@+id/textView3" android:layout_weight="1"/>
+                    <TextView
+                            android:text="TextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:id="@+id/textView7" android:layout_weight="1"/>
+                    <TextView
+                            android:text="TextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:id="@+id/textView6" android:layout_weight="1"/>
+                    <TextView
+                            android:text="TextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:id="@+id/textView5" android:layout_weight="1"/>
+                    <TextView
+                            android:text="TextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:id="@+id/textView4" android:layout_weight="1"/>
+                </LinearLayout>
+                <ImageView
+                        android:src="@drawable/img_line_long"
+                        android:layout_width="328dp"
+                        android:layout_height="1dp"
+                        android:layout_marginHorizontal="16dp"
+                        android:id="@+id/imageView8"/>
+                <TextView
+                        android:text="인기 TOP10"
+                        android:textSize="16sp"
+                        android:textColor="#15696c"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="261dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="18dp"
+                        android:layout_width="83dp"
+                        android:layout_height="24dp"
+                        android:id="@+id/textView8"/>
+                <android.support.design.widget.FloatingActionButton
+                        android:src="@drawable/btn_makechallenge"
+                        android:layout_marginLeft="288dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        app:layout_anchorGravity="center"
+                        android:background="@drawable/border_btn_floating"
+                        android:id="@+id/btn_create" app:maxImageSize="54dp" app:backgroundTint="#14FFFFFF"/>
+            </LinearLayout>
+            <android.support.v7.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/rv_top10"/>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
 
 </LinearLayout>

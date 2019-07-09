@@ -7,31 +7,36 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
 
     <application
+            android:name=".Network.ApplicationController"
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
-            android:theme="@style/AppTheme">
-        <activity android:name=".ChallengeCreate.ActivityCreatePhoto">
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:usesCleartextTraffic="true">
+        <activity android:name=".Activity.ChallengeDetailActivity">
         </activity>
-        <activity android:name=".ChallengeCreate.ActivityCreateContent">
+        <activity android:name=".Activity.SearchActivity">
         </activity>
-        <activity
-                android:name=".CategoryDetailActivity"
-                android:label="@string/title_activity_category_detail"
-                android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-        <activity android:name=".ChallengeCreate.ActivityCreateCategory">
-        </activity>
-        <activity android:name=".ChallengeCreate.ActivityCreateTitle">
-        </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+        <activity android:name=".Activity.MainActivity">
+        </activity>
+        <activity android:name=".ChallengeCreate.ActivityCreateTitle">
+        </activity>
+        <activity android:name=".ChallengeCreate.ActivityCreateContent">
+        </activity>
+        <activity android:name=".ChallengeCreate.ActivityCreateCategory">
+        </activity>
+        <activity android:name=".ChallengeCreate.ActivityCreatePhoto">
+        </activity>
+        <activity android:name=".Activity.CategoryDetailActivity">
         </activity>
     </application>
 
