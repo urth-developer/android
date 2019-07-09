@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Activity.SearchActivity">
+    <ImageView
+            android:layout_marginTop="33dp"
+            android:layout_marginLeft="-15dp"
+            android:layout_marginRight="-15dp"
+            android:background="@drawable/bg_search"
+            android:layout_width="match_parent"
+            android:layout_height="291dp"/>
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="48dp" android:background="#ffffff">
+        <ImageView
+                android:src="@drawable/ic_backarrow"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="14dp"
+                android:id="@+id/btn_back_search"/>
+        <ImageView
+                android:src="@drawable/ic_search"
+                android:layout_marginLeft="320dp"
+                android:layout_marginTop="14dp"
+                android:layout_width="24dp"
+                android:layout_height="24dp" android:id="@+id/btn_search"/>
+
+    </RelativeLayout>
+    <LinearLayout
+            android:layout_marginTop="48dp"
+            android:layout_marginLeft="20dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:text="카테고리 별 보기"
+                android:textSize="16sp"
+                android:textColor="#15696c"
+                android:layout_marginTop="30dp"/>
+        <ImageView
+                android:src="@drawable/img_differaentiate_green"
+                android:layout_marginTop="10dp"
+                android:layout_width="14dp"
+                android:layout_height="2dp" android:id="@+id/image"/>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_marginTop="2dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <TextView
+                    android:background="@drawable/border_round1"
+                    android:text="플라스틱"
+                    android:textSize="12sp"
+                    android:textColor="#53565b"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="7dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
