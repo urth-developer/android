@@ -1,5 +1,6 @@
 package com.example.urthlesh.Activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.example.urthlesh.DB.SharedPreferenceControler
@@ -15,7 +16,7 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        btnLoginSubmit.setOnClickListener {
+        btn_startstartstart.setOnClickListener {
             val login_u_id = edtLoginID.text.toString()
             val login_u_pw: String = edtLoginPW.text.toString()
 
@@ -23,15 +24,24 @@ class LoginActivity : AppCompatActivity() {
             startActivity<MainActivity>()
         }
 
-        txtLoginSignup.setOnClickListener{
-            //회원가입이동
-            }
+
+        txtLoginSignup.setOnClickListener {
+            val intent = Intent(this@LoginActivity, SignUpActivity::class.java)
+            startActivity(intent)
+        }
+
+
+
+
     }
+
+
 
 
     fun postLoginResponse(u_id:String,u_pw:String)
     {
         SharedPreferenceControler.setUserID(this,u_id)
+        SharedPreferenceControler.setUserID(this,u_pw)
 
     }
 }

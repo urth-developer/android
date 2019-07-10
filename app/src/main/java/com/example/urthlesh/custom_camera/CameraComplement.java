@@ -14,8 +14,8 @@ public class CameraComplement extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera_success);
 
-        ImageButton btn_cancel = (ImageButton) findViewById(R.id.btn_cancel);
-        btn_cancel.setOnClickListener(
+        ImageButton profile_edit_back = (ImageButton) findViewById(R.id.profile_edit_back);
+        profile_edit_back.setOnClickListener(
                 new Button.OnClickListener() {
                     public void onClick(View v) {
                         setResult(RESULT_OK);

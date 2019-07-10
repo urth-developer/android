@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                             xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-                                             android:layout_height="match_parent">
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <include
+            android:id="@+id/toolbar_camera_complement"
+            layout="@layout/toolbar_camera_complement"/>
+
 
 
     <LinearLayout
@@ -10,41 +17,65 @@
             android:layout_height="match_parent"
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
-            android:background="#ffffff"
             android:orientation="vertical"
-            android:gravity="center_vertical" tools:ignore="MissingConstraints">
+            android:gravity="center"
+            tools:ignore="MissingConstraints">
 
-
-        <ImageButton
-                android:id="@+id/btn_cancel"
-                android:contentDescription="@string/description_info"
-                android:scaleType="fitXY"
-                android:adjustViewBounds="true"
-                style="@android:style/Widget.Material.Light.Button.Borderless"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="right|top"
-                android:src="@drawable/btn_cancel"
-        />
 
 
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="인증이 완료되었습니다"
-                android:layout_gravity="center"
+                android:textSize="18sp"
+                android:textColor="#48898c"
+                android:letterSpacing="-0.02"
+                android:lineSpacingExtra="9sp"
+                android:gravity="center_horizontal"
+                tools:text="인증이 완료되었습니다"
+        />
+
+        <ImageView
+                android:layout_marginTop="52.8dp"
+                android:layout_marginBottom="27.3dp"
+                android:id="@+id/image_view"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:background="@drawable/img_illust_ecology"
         />
 
 
 
-    <ImageButton
-            android:id="@+id/seeothers"
-            android:contentDescription="@string/description_info"
-            style="@android:style/Widget.Material.Light.Button.Borderless"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
-            android:src="@drawable/btn_seeothers" />
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="#48898c"
+                android:lineSpacingExtra="6sp"
+                android:gravity="center_horizontal"
+                android:text="(12/50)"
+        />
+
+        <TextView
+                android:layout_marginTop="23dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#53565b"
+                android:letterSpacing="-0.02"
+                android:lineSpacingExtra="8sp"
+                android:gravity="center_horizontal"
+                android:text="아아아아아닉네임님의 N번째 인증이에요"
+        />
+        <ImageButton
+                android:layout_marginTop="102dp"
+                android:id="@+id/btn_picture_cancel"
+                android:background="@color/transparent"
+                android:scaleType="fitXY"
+                android:adjustViewBounds="true"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/btn_seeothers" />
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

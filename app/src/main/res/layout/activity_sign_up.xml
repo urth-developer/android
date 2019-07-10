@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".Activity.SignUpActivity"
+
+>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="289.8dp"
+
+            android:orientation="vertical"
+            android:background="@drawable/bg_loginsignin">
+
+
+        <ImageButton
+                android:layout_marginRight="10dp"
+                android:id="@+id/btn_cancel_white"
+                android:contentDescription="@string/description_info"
+                style="@android:style/Widget.Material.Light.Button.Borderless"
+                android:scaleType="fitXY"
+                android:adjustViewBounds="true"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_gravity="top|right"
+                android:src="@drawable/btn_cancel_white"
+        />
+
+
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="35dp"
+            android:gravity="left"
+            android:orientation="vertical"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+    >
+
+        <TextView
+                android:textStyle="bold"
+                android:layout_marginTop="8.2dp"
+                android:id="@+id/textSignInID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#53565b"
+                android:lineSpacingExtra="2sp"
+                android:text="이메일 아이디"
+        />
+
+
+        <EditText
+                android:id="@+id/edtSignInID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="이메일 아이디를 입력하세요"
+                android:textColor="#b0b0b0"
+                android:layout_marginTop="10dp"
+                android:textSize="12sp"
+
+        />
+
+        <TextView
+                android:layout_marginTop="30dp"
+                android:textStyle="bold"
+                android:id="@+id/textSignInPW"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#53565b"
+                android:lineSpacingExtra="2sp"
+                android:text="비밀번호"
+        />
+
+
+        <EditText
+                android:id="@+id/edtSignIninPW"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="비밀번호를 입력하세요"
+                android:textColor="#b0b0b0"
+                android:layout_marginTop="10dp"
+                android:textSize="12sp"
+        />
+
+
+
+        <TextView
+                android:id="@+id/textSignInNickName"
+                android:layout_marginTop="30dp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#53565b"
+                android:lineSpacingExtra="2sp"
+                android:text="닉네임"
+        />
+
+
+        <EditText
+                android:id="@+id/edtSignInNickName"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="한글, 숫자 8자 이내로 공백없이 입력하세요"
+                android:paddingTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:textSize="16sp"
+        />
+
+        <ImageButton
+                android:id="@+id/btn_startstart"
+                android:background="@color/transparent"
+                android:adjustViewBounds="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/btn_signin"
+                android:layout_marginTop="30dp"
+        />
+
+    </LinearLayout>
+
+</LinearLayout>

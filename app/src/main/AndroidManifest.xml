@@ -2,14 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.example.urthlesh">
 
-
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <uses-feature android:name="android.hardware.camera"/>
     <uses-feature android:name="android.hardware.camera.autofocus"/>
-
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
@@ -24,8 +22,27 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:usesCleartextTraffic="true">
+        <activity android:name=".custom_camera.CameraComplement1Activity">
+        </activity>
+        <activity android:name=".Mypage.MyLevelActivity">
+        </activity>
+        <activity android:name=".Mypage.TermsActivity">
+        </activity>
+        <activity android:name=".Mypage.AlarmActivity">
+        </activity>
+        <activity android:name=".Mypage.ApplyListActivity">
+        </activity>
+        <activity android:name=".Mypage.IntroduceServiceActivity">
+        </activity>
+        <activity android:name=".Mypage.ProfileEditActivity">
+        </activity>
+        <activity android:name=".Mypage.SuggestActivity">
+        </activity>
+        <activity android:name=".Activity.MainActivity">
 
-
+        </activity>
+        <activity android:name=".Activity.SignUpActivity">
+        </activity>
         <activity android:name=".custom_camera.CameraComplement">
         </activity>
         <activity android:name=".custom_camera.CameraCheckActivity">
@@ -45,17 +62,12 @@
                     android:resource="@xml/provider_paths"/>
         </provider>
 
-
-
         <activity android:name=".Activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-        </activity>
-        <activity android:name=".Activity.MainActivity">
-
         </activity>
     </application>
 
