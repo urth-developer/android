@@ -22,6 +22,7 @@
     >
     <EditText
             android:id="@+id/edtLoginID"
+            android:inputType="text"
 
             android:layout_width="match_parent" android:layout_height="wrap_content"
     android:hint="이메일 아이디"
@@ -31,6 +32,7 @@
     <EditText
             android:id="@+id/edtLoginPW"
             android:layout_marginBottom="20dp"
+            android:inputType="text"
             android:layout_width="match_parent" android:layout_height="wrap_content"
     android:hint="비밀번호"
     />

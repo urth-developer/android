@@ -13,7 +13,9 @@ import android.view.View
 import android.widget.RelativeLayout
 import android.widget.Toast
 import com.example.urthlesh.Adapter.ProductMainPagerAdapter
+
 import com.example.urthlesh.R
+
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.ArrayList
 
@@ -95,6 +97,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun configureMainTab()
     {
+
         vp_main.adapter= ProductMainPagerAdapter(this,supportFragmentManager, 4)
         vp_main.offscreenPageLimit=2
         vp_main.addOnPageChangeListener(object: ViewPager.OnPageChangeListener{

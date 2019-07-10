@@ -2,11 +2,15 @@ package com.example.urthlesh.Fragment
 
 
 import android.os.Bundle
+import android.os.Handler
 import android.support.v4.app.Fragment
+import android.support.v4.view.ViewPager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.urthlesh.R
+
+import java.util.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -14,10 +18,6 @@ import com.example.urthlesh.R
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- *
- */
 class UsurthFragment : Fragment() {
 
     override fun onCreateView(
@@ -30,3 +30,4 @@ class UsurthFragment : Fragment() {
 
 
 }
+

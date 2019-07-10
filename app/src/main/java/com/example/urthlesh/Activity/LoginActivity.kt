@@ -16,11 +16,16 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        btn_startstartstart.setOnClickListener {
-            val login_u_id = edtLoginID.text.toString()
-            val login_u_pw: String = edtLoginPW.text.toString()
 
-            postLoginResponse(login_u_id, login_u_pw)
+        btn_startstartstart.setOnClickListener {
+
+
+
+
+            //val login_u_id = edtLoginID.text.toString()
+            //val login_u_pw: String = edtLoginPW.text.toString()
+
+
             startActivity<MainActivity>()
         }
 
@@ -36,12 +41,4 @@ class LoginActivity : AppCompatActivity() {
     }
 
 
-
-
-    fun postLoginResponse(u_id:String,u_pw:String)
-    {
-        SharedPreferenceControler.setUserID(this,u_id)
-        SharedPreferenceControler.setUserID(this,u_pw)
-
-    }
 }

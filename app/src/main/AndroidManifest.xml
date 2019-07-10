@@ -22,8 +22,7 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:usesCleartextTraffic="true">
-        <activity android:name=".custom_camera.CameraComplement1Activity">
-        </activity>
+
         <activity android:name=".Mypage.MyLevelActivity">
         </activity>
         <activity android:name=".Mypage.TermsActivity">
@@ -38,11 +37,17 @@
         </activity>
         <activity android:name=".Mypage.SuggestActivity">
         </activity>
-        <activity android:name=".Activity.MainActivity">
 
-        </activity>
         <activity android:name=".Activity.SignUpActivity">
         </activity>
+
+        <activity android:name=".Activity.ChallengeDetailActivity">
+        </activity>
+        <activity android:name=".Activity.SearchActivity">
+        </activity>
+
+
+
         <activity android:name=".custom_camera.CameraComplement">
         </activity>
         <activity android:name=".custom_camera.CameraCheckActivity">
@@ -69,6 +74,20 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <activity android:name=".Activity.MainActivity">
+        </activity>
+        <activity android:name=".ChallengeCreate.ActivityCreateTitle">
+        </activity>
+        <activity android:name=".ChallengeCreate.ActivityCreateContent">
+        </activity>
+        <activity android:name=".ChallengeCreate.ActivityCreateCategory">
+        </activity>
+        <activity android:name=".ChallengeCreate.ActivityCreatePhoto">
+        </activity>
+        <activity android:name=".Activity.CategoryDetailActivity">
+        </activity>
+
     </application>
 
 </manifest>
