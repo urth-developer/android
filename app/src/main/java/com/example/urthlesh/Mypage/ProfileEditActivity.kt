@@ -29,6 +29,10 @@ class ProfileEditActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile_edit)
 
+        profile_edit_back.setOnClickListener{
+            finish()
+        }
+
 
         //BUTTON CLICK
         img_pick_btn.setOnClickListener {
