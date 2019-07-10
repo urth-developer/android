@@ -1,10 +1,12 @@
 package com.example.urthlesh.Network
 
 import android.app.Application
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 class ApplicationController:Application(){
-    /*
-    private val baseURL="52.79.173.137:3000"
+
+    private val baseURL="http://52.79.173.137:3000"
     lateinit var networkService: NetworkService
 
     companion object {
@@ -17,7 +19,7 @@ class ApplicationController:Application(){
         buildNetwork()
     }
     fun buildNetwork(){
-        val retrofit:Retrofit=Retrofit.Builder()
+        val retrofit: Retrofit =Retrofit.Builder()
             .baseUrl(baseURL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
@@ -27,6 +29,6 @@ class ApplicationController:Application(){
     }
 
 
-*/
+
 
 }

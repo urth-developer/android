@@ -4,109 +4,160 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Fragment.HomeFragment">
+        tools:context=".Fragment.HomeFragment"
+>
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
+
     >
-        <!--============================상단=================================-->
-        <LinearLayout
+        <RelativeLayout
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+            <!--===하단=============================================-->
+
+
+            <LinearLayout android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+
+                          android:background="@drawable/bg_main_down"
+                          android:paddingTop="300dp"
+                          android:orientation="vertical"
+                          android:layout_alignParentStart="true" android:layout_alignParentTop="true"
+                          android:layout_marginTop="563dp" android:layout_marginStart="-4dp">
+                <TextView
+
+                        android:id="@+id/home_comment_people"
+                        style="@style/homeCommentTextview"
+                        android:text="3678명의 사람들과 함께"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <TextView
+                        android:id="@+id/home_comment_air"
+                        android:text="공기 34l를 깨끗하게 하고"
+                        style="@style/homeCommentTextview"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <TextView
+                        android:id="@+id/home_comment_tree"
+                        style="@style/homeCommentTextview"
+                        android:text="나무 32그루를 살리고"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+                <TextView
+                        android:id="@+id/home_comment_animal"
+                        style="@style/homeCommentTextview"
+                        android:text="동물 34마리와 함께하며"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <TextView
+                        android:id="@+id/home_comment_water"
+                        style="@style/homeCommentTextview"
+                        android:text="깨끗한 물 323L를 아끼고"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <TextView
+                        android:id="@+id/home_comment_turtle"
+                        style="@style/homeCommentTextview"
+                        android:text="바다거북 34마리를 살렸어요"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <TextView
+                        style="@style/homeCommentTextview"
+                        android:text="어스에서는 작은 실천이 모여 \n큰 변화를 만듭니다."
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <!--============================상단=================================-->
+            <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="-15dp"
+                    android:layout_marginRight="-15dp"
+                    android:layout_marginLeft="-15dp"
+
+                    android:background="@drawable/bg_main"
+            >
+
+                <!--로고이미지 대체-->
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:text="Logo"
+                          android:textColor="#ffffff"
+                          android:layout_marginTop="15dp"
+                          android:layout_gravity="center_horizontal"
+                          android:textStyle="bold"/>
+                <RelativeLayout
+
+                        android:layout_width="match_parent" android:layout_height="90dp"
+                        android:gravity="bottom"
+                        android:orientation="horizontal">
+                    <LinearLayout
+                            android:layout_marginLeft="30dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_alignParentBottom="true"
+                    >
+                        <TextView
+                                android:id="@+id/txtHomeUsername"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="딸기누나 님이"
+                                android:textColor="#ffffff"
+                                android:visibility="visible"
+
+
+                        />
+                        <TextView
+                                android:id="@+id/txtHomeComment"
+                                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="함께하는 챌린지"
+                                android:textColor="#ffffff"
+
+
+                        />
+                        <ImageView
+                                android:layout_width="20dp" android:layout_height="2dp"
+                                android:background="#ffffff"
+                                android:layout_marginTop="10dp"
+                                android:layout_alignParentLeft="true"></ImageView>
+                    </LinearLayout>
+
+                    <Button
+
+                            android:id="@+id/btnHomeSync"
+                            android:layout_width="50dp" android:layout_height="50dp"
+
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentBottom="true"
+                            android:background="#ffffff"/>
+                </RelativeLayout>
+                <!--=================RecyclerView 시작===================-->
+                <LinearLayout
+                        android:layout_marginTop="-10dp"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+
+
+                    <android.support.v7.widget.RecyclerView
+                            android:layout_gravity="center_horizontal"
+                            android:id="@+id/rv_home_dot"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+                    <android.support.v7.widget.RecyclerView
+                            android:layout_gravity="center_horizontal"
+                            android:id="@+id/rv_home_challenge"
+                            android:layout_width="match_parent"
+                            android:layout_height="300dp"></android.support.v7.widget.RecyclerView>
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+        <!--==오늘의 추천 챌린지 시작==-->
+        <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_home_todayChallenge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginTop="-15dp"
-                android:layout_marginRight="-15dp"
-                android:layout_marginLeft="-15dp"
-
-
-                android:background="@drawable/bg_main"
-        >
-
-            <!--로고이미지 대체-->
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:text="Logo"
-                      android:textColor="#ffffff"
-                      android:layout_marginTop="15dp"
-                      android:layout_gravity="center_horizontal"
-
-                      android:textStyle="bold"/>
-            <RelativeLayout
-
-                    android:layout_width="match_parent" android:layout_height="90dp"
-                            android:gravity="bottom"
-                            android:orientation="horizontal">
-                <LinearLayout
-                        android:layout_marginLeft="30dp"
-
-                        android:layout_width="wrap_content" android:layout_height="wrap_content"
-                              android:orientation="vertical"
-
-                              android:layout_alignParentBottom="true">
-                    <TextView
-                            android:id="@+id/txtHomeUsername"
-                            android:layout_width="wrap_content"
-                              android:layout_height="wrap_content"
-                              android:text="딸기누나 님이"
-                              android:textColor="#ffffff"
-                            android:visibility="visible"
-
-
-                    />
-                    <TextView
-                            android:id="@+id/txtHomeComment"
-                            android:layout_width="wrap_content" android:layout_height="wrap_content"
-                              android:text="함께하는 챌린지"
-                              android:textColor="#ffffff"
-
-
-                    />
-                    <ImageView
-                            android:layout_width="20dp" android:layout_height="2dp"
-                            android:background="#ffffff"
-                            android:layout_marginTop="10dp"
-                            android:layout_alignParentLeft="true"></ImageView>
-                </LinearLayout>
-
-                <Button android:layout_width="10dp" android:layout_height="10dp"
-
-                        android:layout_alignParentRight="true"
-                        android:layout_alignParentBottom="true"
-                        android:background="#ffffff"/>
-            </RelativeLayout>
-            <!--=================RecyclerView 시작===================-->
-            <LinearLayout
-                    android:layout_marginTop="-10dp"
-
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                          android:orientation="vertical">
-
-
-                <android.support.v7.widget.RecyclerView
-                        android:layout_gravity="center_horizontal"
-                        android:id="@+id/rv_home_challenge"
-                        android:layout_width="match_parent"
-                        android:layout_height="300dp"></android.support.v7.widget.RecyclerView>
-                <android.support.v7.widget.RecyclerView
-                        android:layout_gravity="center_horizontal"
-                        android:id="@+id/rv_home_dot"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
-            </LinearLayout>
-        </LinearLayout>
-        <!--===========라운드 상단===============-->
-        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                   android:src="@drawable/img_main_yame"
-        />
-
-        <!--========뭐가 바뀐대 ============-->
-
-
-        <!--========금주의 테마===========-->
-        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                   android:src="@drawable/img_line_long"
-        />
+        ></android.support.v7.widget.RecyclerView>
 
     </LinearLayout>
 

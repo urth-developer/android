@@ -10,8 +10,8 @@
         tools:context=".Activity.LoginActivity">
     <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bg_loginsignin"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_loginsignin"
     ></RelativeLayout>
     <LinearLayout
             android:layout_width="match_parent"
@@ -22,16 +22,15 @@
     >
     <EditText
             android:id="@+id/edtLoginID"
+
             android:layout_width="match_parent" android:layout_height="wrap_content"
     android:hint="이메일 아이디"
-            android:layout_marginBottom="10dp"
-              android:textColor="@color/colorGray"
+              android:textColor="#b0b0b0"
               
     />
     <EditText
             android:id="@+id/edtLoginPW"
             android:layout_marginBottom="20dp"
-android:textColor="@color/colorGray"
             android:layout_width="match_parent" android:layout_height="wrap_content"
     android:hint="비밀번호"
     />
@@ -43,21 +42,17 @@ android:textColor="@color/colorGray"
             android:textColor="#ffffff"
             android:paddingVertical="10dp"
             android:paddingHorizontal="30dp"
-            android:layout_marginBottom="20dp"
     />
     <TextView
             android:id="@+id/txtLoginBack"
             android:layout_width="wrap_content" android:layout_height="wrap_content"
-    android:text="가입하기"
-            android:textColor="#53565b"
-            android:layout_marginBottom="80dp"
+    android:text="그냥 둘러볼래요"
 
     />
     <TextView
             android:id="@+id/txtLoginSignup"
-            android:textColor="#53565b"
             android:layout_width="wrap_content" android:layout_height="wrap_content"
-    android:text="그냥 둘러볼래요"
+    android:text="회원가입"
     />
     </LinearLayout>
 
