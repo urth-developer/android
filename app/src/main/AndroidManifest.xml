@@ -25,6 +25,12 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:usesCleartextTraffic="true">
 
+        <activity android:name=".Activity.ChallengeDetailActivity">
+        </activity>
+        <activity android:name=".Activity.SearchActivity">
+        </activity>
+
+
 
         <activity android:name=".custom_camera.CameraComplement">
         </activity>
@@ -55,7 +61,16 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activity.MainActivity">
-
+        </activity>
+        <activity android:name=".ChallengeCreate.ActivityCreateTitle">
+        </activity>
+        <activity android:name=".ChallengeCreate.ActivityCreateContent">
+        </activity>
+        <activity android:name=".ChallengeCreate.ActivityCreateCategory">
+        </activity>
+        <activity android:name=".ChallengeCreate.ActivityCreatePhoto">
+        </activity>
+        <activity android:name=".Activity.CategoryDetailActivity">
         </activity>
         <activity android:name=".Activity.MyChallengeDetailActivity">
 

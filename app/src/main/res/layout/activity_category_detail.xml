@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Activity.CategoryDetailActivity">
+    <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <ImageView
+                android:background="@drawable/img_shadow_categorydetail"
+                android:layout_marginLeft="-24dp"
+                android:layout_marginRight="-24dp"
+                android:layout_marginTop="-24dp"
+                android:layout_width="match_parent"
+                android:layout_height="260dp"/>
+        <ImageView
+                android:layout_marginLeft="-15dp"
+                android:layout_marginRight="-15dp"
+                android:layout_marginTop="-15dp"
+                android:layout_width="match_parent"
+                android:layout_height="220dp" android:id="@+id/img_category_detail_main"/>
+    </RelativeLayout>
+        <LinearLayout
+                android:background="#E6ffffff"
+                android:layout_width="match_parent"
+                android:layout_height="48dp">
+
+            <ImageView
+                    android:src="@drawable/ic_backarrow"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp" android:id="@+id/btn_back_category_detail"/>
+            <TextView
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="9dp"
+                    android:textSize="18sp"
+                    android:textColor="#53565b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="27dp"
+                    android:id="@+id/txt_category_title"/>
+
+        </LinearLayout>
+
+</RelativeLayout>

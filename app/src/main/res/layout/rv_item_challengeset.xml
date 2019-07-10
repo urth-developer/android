@@ -13,7 +13,7 @@
         <ImageView
                 android:layout_width="98dp"
                 android:layout_height="98dp"
-                android:id="@+id/img_rv_challange_image"/>
+                android:id="@+id/img_rv_challenge_image"/>
         <LinearLayout
                 android:orientation="vertical"
                 android:paddingLeft="20dp"
@@ -26,7 +26,7 @@
                     android:textColor="#53565b"
                     android:textSize="14sp"
                     android:layout_width="194dp"
-                    android:layout_height="40dp" android:id="@+id/txt_rv_challange_title"/>
+                    android:layout_height="40dp" android:id="@+id/txt_rv_challenge_title"/>
             <ImageView
                     android:src="@drawable/img_differaentiate_green"
                     android:layout_marginLeft="2dp"
@@ -44,14 +44,14 @@
                         android:textColor="#b0b0b0"
                         android:layout_marginTop="3dp"
                         android:layout_width="101dp"
-                        android:layout_height="15dp" android:id="@+id/txt_rv_challange_creator"/>
+                        android:layout_height="15dp" android:id="@+id/txt_rv_challenge_creator"/>
                 <TextView
                         android:text="총 XXX회"
                         android:textSize="12sp"
                         android:textColor="#b0b0b0"
                         android:layout_marginLeft="45dp"
                         android:layout_width="45dp"
-                        android:layout_height="18dp" android:id="@+id/num_rv_challange_total"/>
+                        android:layout_height="18dp" android:id="@+id/num_rv_challenge_total"/>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
