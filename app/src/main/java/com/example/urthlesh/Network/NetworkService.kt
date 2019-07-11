@@ -48,7 +48,6 @@ interface NetworkService {
     fun postCameraResponse(
         @Header("token") token:String,
 
-        @Part("content")content:RequestBody,
         @Part cmtImg:MultipartBody.Part
 
     ):Call<PostCameraResponse>

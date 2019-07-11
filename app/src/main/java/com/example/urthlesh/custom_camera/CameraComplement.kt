@@ -20,12 +20,6 @@ class CameraComplement : AppCompatActivity() {
             finish()
         }
 
-//            object : Button.OnClickListener {
-//                override fun onClick(v: View) {
-//                    setResult(Activity.RESULT_OK)
-//                    finish()
-//                }
-//            }
 
 
 
