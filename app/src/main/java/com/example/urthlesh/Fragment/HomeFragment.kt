@@ -12,25 +12,18 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import cdflynn.android.library.turn.TurnLayoutManager
+import com.example.urthlesh.Activity.MyChallengeDetailActivity
 import com.example.urthlesh.Adapter.ChallengeRecyclerViewMainAdapter
 import com.example.urthlesh.Adapter.IndicatorAdapter
 import com.example.urthlesh.Adapter.RVChallengeAdapter
+import com.example.urthlesh.Data.ChallengeData
 import com.example.urthlesh.Data.HomechallengeData
-import com.example.urthlesh.R
-import com.example.urthlesh.custom_camera.CameraActivity
+
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.rv_item_main_challenge.*
 import org.jetbrains.anko.startActivity
 
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- *
- */
 class HomeFragment : Fragment() {
     lateinit var challengeRecyclerViewMainAdapter: ChallengeRecyclerViewMainAdapter
     lateinit var rvChallengeAdapter:RVChallengeAdapter
@@ -40,7 +33,7 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        return inflater.inflate(com.example.urthlesh.R.layout.fragment_home, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -48,20 +41,16 @@ class HomeFragment : Fragment() {
 
         //카메라 실행되는 버튼
         btnHomeSync.setOnClickListener {
-            context!!.startActivity<CameraActivity>()
-            Log.i("jahyunTag", "GoThrough")
+           context!!.startActivity<MyChallengeDetailActivity>()
         }
-
-
-
-
-
         var dataList: ArrayList<HomechallengeData> = ArrayList()
-        //var challengedataList:ArrayList<ChallengeData> = ArrayList()
+        var ChallengeDataList: ArrayList<ChallengeData> = ArrayList()
+
+
         dataList.add(
             HomechallengeData(
-                "",
-                ""))
+                "http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png" ,""
+                ))
         dataList.add(
             HomechallengeData(
                "https://image.shutterstock.com/z/stock-vector-vector-flat-illustration-little-men-prepare-for-the-day-of-the-earth-save-the-planet-save-energy-1060898801.jpg",
@@ -82,9 +71,25 @@ class HomeFragment : Fragment() {
             HomechallengeData(
                 "",
                 ""))
+            // 오늘의 챌린지
+        ChallengeDataList.add(
+            ChallengeData(
+                "https://image.shutterstock.com/z/stock-vector-vector-flat-illustration-little-men-prepare-for-the-day-of-the-earth-save-the-planet-save-energy-1060898801.jpg",
+                "챌린지 1","eunbin",4))
+        ChallengeDataList.add(
+            ChallengeData(
+                "http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
+                "챌린지 2","jisoo",5))
+        ChallengeDataList.add(
+            ChallengeData(
+                "http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
+                "챌린지 3","Manhyeuk",4))
         challengeRecyclerViewMainAdapter= ChallengeRecyclerViewMainAdapter(context!!,dataList)
         rv_home_challenge.adapter=challengeRecyclerViewMainAdapter
-        rv_home_challenge.layoutManager=TurnLayoutManager(context!!,TurnLayoutManager.Gravity.START,TurnLayoutManager.Orientation.HORIZONTAL,1200,200,true)
+                rv_home_challenge.layoutManager=TurnLayoutManager(context!!,TurnLayoutManager.Gravity.START,TurnLayoutManager.Orientation.HORIZONTAL,1200,200,true)
+    rvChallengeAdapter= RVChallengeAdapter(context!!,ChallengeDataList)
+        rv_home_todayChallenge.adapter=rvChallengeAdapter
+        rv_home_todayChallenge.layoutManager=LinearLayoutManager(context!!)
 
          val indexAdapter = IndicatorAdapter(context!!, dataList)
         rv_home_dot.adapter=indexAdapter

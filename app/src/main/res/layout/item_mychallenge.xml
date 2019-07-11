@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+
+>
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+    >
+        <TextView
+                android:layout_marginTop="20dp"
+                android:id="@+id/rv_item_mychallenge_title"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="한줄짜리 제목은 이렇게 됩니다 >"
+                android:textStyle="bold"
+
+        />
+        <ImageView
+                android:layout_marginVertical="10dp"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:src="@drawable/img_differaentiate_green"
+        />
+        <TextView
+                android:layout_marginBottom="15dp"
+                android:id="@+id/rv_item_mychallenge_creator"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="개설자이름은 제한두기로"
+                android:textColor="#b0b0b0"
+        />
+    </LinearLayout>
+    <LinearLayout
+            android:layout_marginLeft="300dp"
+            android:orientation="vertical"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+
+    >
+        <FrameLayout
+                android:id="@+id/drag_handle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            <Button android:id="@+id/btn_mychallengedetail_auth"
+                    android:layout_width="wrap_content" android:layout_height="30dp"
+                    android:background="@drawable/btn_search_fill"
+                    android:text="인증하기"
+                    android:textColor="#ffffff"
+            />
+            <ImageView
+                    android:visibility="gone"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/chat_1"/>
+        </FrameLayout>
+        <TextView
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:id="@+id/rv_item_mychallenge_numofchallenge"
+                android:textColor="#b0b0b0"
+                android:text="총 몇회"
+        />
+
+    </LinearLayout>
+    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+    android:src="@drawable/img_line_long"
+    />
+</RelativeLayout>
