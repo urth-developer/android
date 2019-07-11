@@ -8,11 +8,14 @@ import com.example.urthlesh.Network.Post.PostLoginResponse
 import com.example.urthlesh.Network.Post.PostMyFavoriteChallengeHomeResponse
 import com.example.urthlesh.Network.Post.PostSignupResponse
 
+
 import com.google.gson.JsonObject
+
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.POST
+
 
 
 
@@ -39,6 +42,7 @@ interface NetworkService {
         @Header("Content-Type") content_type:String,
         @Header("token")token:String
     ):Call<PostMyFavoriteChallengeHomeResponse>
+
 
     @GET("/settings/suggestion")
     fun getApplyListResponse(
