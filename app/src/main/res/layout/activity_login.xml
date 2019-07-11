@@ -36,15 +36,19 @@
             android:layout_width="match_parent" android:layout_height="wrap_content"
     android:hint="비밀번호"
     />
-    <Button
-            android:id="@+id/btnLoginSubmit"
-            android:layout_width="170dp" android:layout_height="wrap_content"
-    android:text="로그인"
-            android:background="@drawable/active_border"
-            android:textColor="#ffffff"
-            android:paddingVertical="10dp"
-            android:paddingHorizontal="30dp"
-    />
+        <ImageButton
+                android:id="@+id/btn_startstartstart"
+                android:contentDescription="@string/description_info"
+                style="@android:style/Widget.Material.Light.Button.Borderless"
+                android:scaleType="fitXY"
+                android:adjustViewBounds="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/btn_signin"
+                android:paddingTop="35dp"
+                android:layout_marginBottom="5dp"
+        />
     <TextView
             android:id="@+id/txtLoginBack"
             android:layout_width="wrap_content" android:layout_height="wrap_content"

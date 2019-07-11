@@ -45,6 +45,8 @@ class HomeFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+
+        //카메라 실행되는 버튼
         btnHomeSync.setOnClickListener {
             context!!.startActivity<CameraActivity>()
             Log.i("jahyunTag", "GoThrough")
