@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.example.urthlesh">
 
+
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
@@ -75,8 +76,9 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
         <activity android:name=".Activity.MainActivity">
+        </activity>
+        <activity android:name=".Activity.AddFriendActivity">
         </activity>
         <activity android:name=".ChallengeCreate.ActivityCreateTitle">
         </activity>
@@ -88,7 +90,9 @@
         </activity>
         <activity android:name=".Activity.CategoryDetailActivity">
         </activity>
+        <activity android:name=".Activity.MyChallengeDetailActivity">
 
+        </activity>
     </application>
 
 </manifest>

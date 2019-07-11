@@ -12,35 +12,43 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import cdflynn.android.library.turn.TurnLayoutManager
+import com.example.urthlesh.Activity.MyChallengeDetailActivity
 import com.example.urthlesh.Adapter.ChallengeRecyclerViewMainAdapter
 import com.example.urthlesh.Adapter.IndicatorAdapter
 import com.example.urthlesh.Adapter.RVChallengeAdapter
+import com.example.urthlesh.DB.SharedPreferenceControler
+import com.example.urthlesh.Data.ChallengeData
 import com.example.urthlesh.Data.HomechallengeData
-import com.example.urthlesh.R
-import com.example.urthlesh.custom_camera.CameraActivity
+import com.example.urthlesh.Network.ApplicationController
+import com.example.urthlesh.Network.NetworkService
+import com.example.urthlesh.Network.Post.CategoryHomeData
+import com.example.urthlesh.Network.Post.GetUrthResultHomeResponse
+import com.example.urthlesh.Network.Post.PostMyFavoriteChallengeHomeResponse
+
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.rv_item_main_challenge.*
 import org.jetbrains.anko.startActivity
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- *
- */
 class HomeFragment : Fragment() {
     lateinit var challengeRecyclerViewMainAdapter: ChallengeRecyclerViewMainAdapter
     lateinit var rvChallengeAdapter:RVChallengeAdapter
+    lateinit var UrthResultHomeDataList:ArrayList<Int>
+    lateinit var dataList: ArrayList<HomechallengeData>
+    lateinit var ChallengeDataList: ArrayList<ChallengeData>
+    val networkService: NetworkService by lazy{
+        ApplicationController.instance.networkService
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        return inflater.inflate(com.example.urthlesh.R.layout.fragment_home, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -48,43 +56,59 @@ class HomeFragment : Fragment() {
 
         //카메라 실행되는 버튼
         btnHomeSync.setOnClickListener {
-            context!!.startActivity<CameraActivity>()
-            Log.i("jahyunTag", "GoThrough")
+           context!!.startActivity<MyChallengeDetailActivity>()
         }
 
+        dataList= ArrayList()
+        ChallengeDataList = ArrayList()
 
-
-
-
-        var dataList: ArrayList<HomechallengeData> = ArrayList()
-        //var challengedataList:ArrayList<ChallengeData> = ArrayList()
-        dataList.add(
-            HomechallengeData(
-                "",
-                ""))
-        dataList.add(
-            HomechallengeData(
-               "https://image.shutterstock.com/z/stock-vector-vector-flat-illustration-little-men-prepare-for-the-day-of-the-earth-save-the-planet-save-energy-1060898801.jpg",
-            "챌린지 1"))
-        dataList.add(
-            HomechallengeData(
-            "http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
-             "챌린지 2"))
-        dataList.add(
-            HomechallengeData(
-            "http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
-             "챌린지 3"))
-        dataList.add(
-            HomechallengeData(
-            "http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
-            "챌린지 4"))
-        dataList.add(
-            HomechallengeData(
-                "",
-                ""))
+//
+//        dataList.add(
+//            HomechallengeData(
+//                "http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png" ,""
+//                ))
+//        dataList.add(
+//            HomechallengeData(
+//               "https://image.shutterstock.com/z/stock-vector-vector-flat-illustration-little-men-prepare-for-the-day-of-the-earth-save-the-planet-save-energy-1060898801.jpg",
+//            "챌린지 1"))
+//        dataList.add(
+//            HomechallengeData(
+//            "http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
+//             "챌린지 2"))
+//        dataList.add(
+//            HomechallengeData(
+//            "http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
+//             "챌린지 3"))
+//        dataList.add(
+//            HomechallengeData(
+//            "http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
+//            "챌린지 4"))
+//        dataList.add(
+//            HomechallengeData(
+//                "",
+//                ""))
+            // 오늘의 챌린지
+        ChallengeDataList.add(
+            ChallengeData(
+                "https://image.shutterstock.com/z/stock-vector-vector-flat-illustration-little-men-prepare-for-the-day-of-the-earth-save-the-planet-save-energy-1060898801.jpg",
+                "챌린지 1","eunbin",4))
+        ChallengeDataList.add(
+            ChallengeData(
+                "http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
+                "챌린지 2","jisoo",5))
+        ChallengeDataList.add(
+            ChallengeData(
+                "http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
+                "챌린지 3","Manhyeuk",4))
+        UrthResultHomeDataList= ArrayList()
         challengeRecyclerViewMainAdapter= ChallengeRecyclerViewMainAdapter(context!!,dataList)
         rv_home_challenge.adapter=challengeRecyclerViewMainAdapter
         rv_home_challenge.layoutManager=TurnLayoutManager(context!!,TurnLayoutManager.Gravity.START,TurnLayoutManager.Orientation.HORIZONTAL,1200,200,true)
+        getHomehallengeDataList()
+        ///////
+        rvChallengeAdapter= RVChallengeAdapter(context!!,ChallengeDataList)
+        rv_home_todayChallenge.adapter=rvChallengeAdapter
+        rv_home_todayChallenge.layoutManager=LinearLayoutManager(context!!)
 
          val indexAdapter = IndicatorAdapter(context!!, dataList)
         rv_home_dot.adapter=indexAdapter
@@ -105,6 +129,89 @@ class HomeFragment : Fragment() {
 
             }
         })
+
+       getCategoryHomeDataListResponse()
+
+
+
+
+    }
+    private fun getCategoryHomeDataListResponse(){
+        val getUrthResultHomeResponse=networkService.getUrhResultHomeResponse("application/json")
+
+        getUrthResultHomeResponse.enqueue(object: Callback<GetUrthResultHomeResponse>{
+            override fun onFailure(call: Call<GetUrthResultHomeResponse>, t: Throwable) {
+                Log.v("eeeee","페일페일")
+                Log.e("UrthResulDataList Fail",t.toString())
+            }
+
+            override fun onResponse(
+                call: Call<GetUrthResultHomeResponse>,
+                response: Response<GetUrthResultHomeResponse>
+            ) {
+                if (response.isSuccessful){
+
+                    if(response.body()!!.status==200)
+                    {
+
+
+
+                            UrthResultHomeDataList.add(response.body()!!.data!!.authCountsByCategory!!.category1)
+                        UrthResultHomeDataList.add(response.body()!!.data!!.authCountsByCategory!!.category2)
+                        UrthResultHomeDataList.add(response.body()!!.data!!.authCountsByCategory!!.category3)
+                        UrthResultHomeDataList.add(response.body()!!.data!!.authCountsByCategory!!.category4)
+                        UrthResultHomeDataList.add(response.body()!!.data!!.authCountsByCategory!!.category5)
+
+
+                        home_comment_people.text=response.body()!!.data!!.totalUserCount!!.toString()+"명의 사람들과 함께"
+                        home_comment_turtle.text="바다거북"+UrthResultHomeDataList[0].toString()+"마리를 살렸어요"
+                        home_comment_air.text="공기"+UrthResultHomeDataList[1].toString()+"L를 깨끗하게 하고"
+                        home_comment_tree.text="나무"+UrthResultHomeDataList[2].toString()+"그루를 살리고"
+                        home_comment_water.text="깨끗한 물"+UrthResultHomeDataList[3].toString()+"L를 아끼고"
+                        home_comment_animal.text="동물"+UrthResultHomeDataList[4].toString()+"마리와 함께하며"
+
+
+                    }
+                }
+                }
+
+        })
+
+
+    }
+    fun getHomehallengeDataList(){
+        val getPostMyFavoriteChallengeHomeResponse=networkService.getPostMyFavoriteChallengeResponse("application/json",SharedPreferenceControler.getUseToken(context!!))
+        getPostMyFavoriteChallengeHomeResponse.enqueue(object :Callback<PostMyFavoriteChallengeHomeResponse>{
+            override fun onFailure(call: Call<PostMyFavoriteChallengeHomeResponse>, t: Throwable) {
+                Log.e("error","onfailur error")
+            }
+
+            override fun onResponse(
+                call: Call<PostMyFavoriteChallengeHomeResponse>,
+                response: Response<PostMyFavoriteChallengeHomeResponse>
+            ) {
+                if(response.isSuccessful)
+                {
+                    if (response.body()!!.status==200)
+                    {   Log.v("eeeeee","통신성공")
+                        var newDataList:ArrayList<HomechallengeData> = ArrayList<HomechallengeData>()
+                            //response.body()!!.data!!
+                            //arrayListOf(HomechallengeData("",1,""))
+                       // newDataList.addAll(response.body()!!.data!!)
+                        newDataList.add(HomechallengeData("",-1,""))
+                        newDataList.addAll(response.body()!!.data)
+                        newDataList.add(HomechallengeData("",-1,""))
+
+
+                        challengeRecyclerViewMainAdapter.dataList.clear()
+                        challengeRecyclerViewMainAdapter.dataList.addAll(newDataList)
+                        challengeRecyclerViewMainAdapter.notifyDataSetChanged()
+                    }
+                }
+                }
+
+        })
+
     }
 
 
