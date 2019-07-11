@@ -43,8 +43,8 @@ public class MyRender {}
 
 lateinit var timelineRecyclerViewAdapter: TimelineRecyclerViewAdapter
 
-var itemCount = 0
 
+var itemCount = 0
 
 
 
@@ -133,7 +133,7 @@ class MeUsurthFragment : Fragment() {
         DeepCertiList3.add(
             DeepTimeline(
                 "http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
-                "텀블러 사용하기"
+                "빈츠 사용하기"
             )
         )
 
@@ -152,14 +152,21 @@ class MeUsurthFragment : Fragment() {
         rv_my_timeline.layoutManager = linearLayoutManager
         var Use1 = UserData(7)
         txt_my_level.text = "Level   " +Use1.level.toString()
-                // txt_my_num.text = "총 " + itemCount.toString() + "회 인증"
+
+        itemCount =0
+        for (item in CertificateList){
+            itemCount += item.list.size
+        }
+        txt_my_num.text = "총 " + itemCount.toString() + "회 인증"
+
+
 
        // chart.setBackgroundColor(Color.rgb(100, 65, 82));
 
         chart.getDescription().setEnabled(false);
 
         chart.setWebLineWidth(1f);
-        //chart.setWebColor(Color.LTGRAY);
+        chart.setWebColor(Color.WHITE);
         chart.setWebLineWidthInner(1f);
         chart.setWebColorInner(Color.WHITE);
         chart.setWebAlpha(100);
@@ -217,14 +224,16 @@ class MeUsurthFragment : Fragment() {
             entries1.add(RadarEntry(val1));
         }
 
+
         var set1: RadarDataSet = RadarDataSet(entries1, "Last Week");
-        set1.setColor(Color.rgb(100,100,100));
-        set1.setFillColor(Color.rgb(50,25,10));
-        set1.setDrawFilled(true);
-        set1.setFillAlpha(180);
-        set1.setLineWidth(2f);
-        set1.setDrawHighlightCircleEnabled(true);
-        set1.setDrawHighlightIndicators(false);
+
+        set1.setColor(Color.rgb(72,137,140),89)
+        set1.setFillColor(Color.rgb(72 ,137,140))
+        set1.setDrawFilled(true)
+        set1.setFillAlpha(180)
+        set1.setLineWidth(1f)
+        set1.setDrawHighlightCircleEnabled(true)
+        set1.setDrawHighlightIndicators(false)
 
 
 
