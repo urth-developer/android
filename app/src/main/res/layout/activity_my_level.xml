@@ -13,4 +13,20 @@
             android:id="@+id/toolbar_my_level"
             layout="@layout/toolbar_my_level"/>
 
+    <ImageView
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center"
+            android:layout_height="120dp"
+            android:layout_width="120dp"
+            android:background="@drawable/img_level_progress"
+    />
+
+    <ImageView
+            android:layout_marginTop="31.1dp"
+            android:layout_gravity="center"
+            android:layout_height="170dp"
+            android:layout_width="320dp"
+            android:background="@drawable/img_level_table"
+    />
+
 </LinearLayout>
