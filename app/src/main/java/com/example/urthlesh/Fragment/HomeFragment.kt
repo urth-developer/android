@@ -24,6 +24,7 @@ import com.example.urthlesh.Network.NetworkService
 import com.example.urthlesh.Network.Post.CategoryHomeData
 import com.example.urthlesh.Network.Post.GetUrthResultHomeResponse
 import com.example.urthlesh.Network.Post.PostMyFavoriteChallengeHomeResponse
+import com.example.urthlesh.custom_camera.CameraActivity
 
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.rv_item_main_challenge.*
@@ -56,7 +57,7 @@ class HomeFragment : Fragment() {
 
         //카메라 실행되는 버튼
         btnHomeSync.setOnClickListener {
-           context!!.startActivity<MyChallengeDetailActivity>()
+           context!!.startActivity<CameraActivity>()
         }
 
         dataList= ArrayList()

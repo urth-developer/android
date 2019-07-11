@@ -92,8 +92,8 @@
                 android:id="@+id/btn_picture_cancel"
                 android:background="@color/transparent"
                 android:scaleType="fitXY"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="240dp"
+                android:layout_height="38dp"
                 android:layout_gravity="center"
                 android:src="@drawable/btn_seeothers" />
 

@@ -1,22 +1,14 @@
 package com.example.urthlesh.Network
 
-import com.example.urthlesh.Network.Post.GetApplyListResponse
 import retrofit2.Call
 import com.example.urthlesh.Fragment.UsurthFragment
-import com.example.urthlesh.Network.Post.GetUrthResultHomeResponse
-import com.example.urthlesh.Network.Post.PostLoginResponse
-import com.example.urthlesh.Network.Post.PostMyFavoriteChallengeHomeResponse
-import com.example.urthlesh.Network.Post.PostSignupResponse
+import com.example.urthlesh.Network.Post.*
 
 
 import com.google.gson.JsonObject
-
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.Header
-import retrofit2.http.POST
-
-
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
+import retrofit2.http.*
 
 
 interface NetworkService {
@@ -49,6 +41,17 @@ interface NetworkService {
         @Header("Content_Type")content_type: String,
         @Header("token")token_type: String
     ): Call<GetApplyListResponse>
+
+
+    @Multipart
+    @POST("/urth/auth")
+    fun postCameraResponse(
+        @Header("token") token:String,
+
+        @Part("content")content:RequestBody,
+        @Part cmtImg:MultipartBody.Part
+
+    ):Call<PostCameraResponse>
 
 
 }
