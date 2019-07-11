@@ -1,6 +1,5 @@
 package com.example.urthlesh.Fragment
 
-
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.util.Log
@@ -27,10 +26,10 @@ class AdvertiseFragment : Fragment() {
 
 
         val img_url: String = arguments!!.getString("background_url")
-       Log.d("url",img_url);
-       Glide.with(this)
-           .load(img_url)
-           .into(img_fragment_advertise)
+        Log.d("url",img_url);
+        Glide.with(this)
+            .load(img_url)
+            .into(img_fragment_advertise)
     }
 
 }

@@ -1,0 +1,3 @@
+package com.example.urthlesh.Data
+
+class ApplicationDetailData(var application_detail_image:String,var application_detail_title:String,var application_detail_date:String,var application_detail_chalstatus_wait:String)
