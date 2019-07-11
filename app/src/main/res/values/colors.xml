@@ -7,4 +7,6 @@
 
     <color name="colorGray">#CFCFCF</color>
     <color name="colorPrimaryYellow">#FFD63F</color>
+    <color name="white">#ffffff</color>
+    <color name="fontbasic">#53565b</color>
 </resources>

@@ -8,7 +8,11 @@ import android.support.v4.view.ViewPager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RelativeLayout
+import android.widget.TextView
+import com.example.urthlesh.Adapter.UsurthAdapter
 import com.example.urthlesh.R
+import kotlinx.android.synthetic.main.fragment_usurth.*
 
 import java.util.*
 
@@ -25,9 +29,32 @@ class UsurthFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+
         return inflater.inflate(R.layout.fragment_usurth, container, false)
+
+
     }
 
 
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        configureUsTab()
+    }
+
+    private fun configureUsTab(){
+        vp_usurth.adapter = UsurthAdapter(childFragmentManager, 2)
+        vp_usurth.offscreenPageLimit=1
+        us_earth_me_friend.setupWithViewPager(vp_usurth)
+
+        val navUsurthLayout: View = (context!!.getSystemService(android.content.Context.LAYOUT_INFLATER_SERVICE)as LayoutInflater)
+            .inflate(R.layout.navigation_usurth,null,false)
+        us_earth_me_friend.getTabAt(0)!!.customView = navUsurthLayout.findViewById(R.id.navigation_all_urth_me) as RelativeLayout
+        us_earth_me_friend.getTabAt(0)!!.customView = navUsurthLayout.findViewById(R.id.navigation_all_urth_friend) as RelativeLayout
+
+
+
+
+    }
 }
 

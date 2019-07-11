@@ -77,6 +77,8 @@
         </activity>
         <activity android:name=".Activity.MainActivity">
         </activity>
+        <activity android:name=".Activity.AddFriendActivity">
+        </activity>
         <activity android:name=".ChallengeCreate.ActivityCreateTitle">
         </activity>
         <activity android:name=".ChallengeCreate.ActivityCreateContent">

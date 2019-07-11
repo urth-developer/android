@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_friend"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="6dp"
+                android:id="@+id/relativeFriend"
+                xmlns:http="http://schemas.android.com/apk/res-auto">
+
+
+
+    <ImageView android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:id="@+id/img_rv_profile_back"
+               android:layout_marginTop="9dp"
+               android:src="@drawable/img_friend_card_profileimage"
+               android:layout_centerHorizontal="true"/>
+
+    <ImageView android:layout_width="60dp"
+               android:layout_height="60dp"
+               android:layout_marginTop="20dp"
+               android:id="@+id/img_rv_friend_profile"
+               android:layout_centerHorizontal="true"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:id="@+id/txt_rv_friend_name"
+            android:layout_below="@+id/img_rv_profile_back"
+            android:textColor="#53565b"
+            android:lineSpacingExtra="6sp"
+            android:layout_marginTop="4dp"
+            android:layout_centerHorizontal="true"
+            android:text="솝트친구"/>
+    />
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="#53565b"
+            android:lineSpacingExtra="6sp"
+            android:layout_marginTop="2dp"
+            android:id="@+id/int_rv_user_level"
+            android:layout_marginBottom="4dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/txt_rv_friend_name"
+            android:gravity="center_horizontal"
+            android:text="Level. 3"/>
+
+    <ImageView android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:src="@drawable/ic_checked"
+               android:layout_alignTop="@+id/int_rv_user_num"
+               android:layout_toStartOf="@+id/img_rv_profile_back"
+               android:layout_marginTop="2dp"
+               android:layout_marginEnd="-36dp"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:id="@+id/int_rv_user_num"
+            android:textColor="#b0b0b0"
+            android:layout_marginLeft="48dp"
+            android:layout_below="@+id/int_rv_user_level"
+            android:lineSpacingExtra="6sp"
+            android:gravity="end"
+            android:text="총인증횟수: 5회"/>
+
+
+</RelativeLayout>

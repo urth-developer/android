@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".Activity.AddFriendActivity">
+
+    <include
+            android:id="@+id/toolbar_addfriend"
+            layout="@layout/toolbar_addfriend"/>
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="15dp"
+              android:layout_marginTop="30dp"
+              android:text="친구 닉네임"
+              android:textSize="16sp"
+              android:textStyle="bold"
+              android:lineHeight="17dp"
+              android:textColor="#15696c"/>
+    <ImageView android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="15dp"
+               android:layout_marginTop="10dp"
+               android:src="@drawable/img_differaentiate_green"/>
+
+    <LinearLayout android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="40dp"
+                  android:orientation="horizontal">
+        <EditText
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:layout_marginLeft="15dp"
+                android:textColor="#b0b0b0"
+                android:hint="친구 닉네임을 검색하세요"
+                android:ems="10"
+                android:id="@+id/edt_search_friendname"/>
+        <Button
+                android:text="검색"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#ffffff"
+                android:layout_width="80dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="18dp"
+                android:background="@drawable/btn_search_fill"
+                android:id="@+id/btn_search_friend"/>
+    </LinearLayout>
+
+
+
+    //겹침
+    <RelativeLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="80dp"
+                    android:id="@+id/find_friend_card">
+        //검색 후 친구 없는 경우
+        <LinearLayout android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical"
+                      android:layout_centerHorizontal="true"
+                      android:id="@+id/txt_cannot_find_friend">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="#53565b"
+                    android:textStyle="bold"
+                    android:lineSpacingExtra="8sp"
+                    tools:text="사용자를 찾을 수 없습니다"
+            />
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textSize="14sp"
+                    android:textColor="#53565b"
+                    android:lineSpacingExtra="6sp"
+                    android:layout_gravity="center"
+                    tools:text="닉네임을 다시 확인해주세요"
+            />
+        </LinearLayout>
+
+
+        <RelativeLayout android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:id="@+id/img_find_friend">
+            <ImageView  android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/card_friend"
+                        android:layout_centerHorizontal="true"/>
+
+            <ImageView android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:id="@+id/img_rv_profile_back"
+                       android:layout_marginTop="9dp"
+                       android:src="@drawable/img_friend_card_profileimage"
+                       android:layout_centerHorizontal="true"/>
+
+            <ImageView android:layout_width="60dp"
+                       android:layout_height="60dp"
+                       android:layout_marginTop="20dp"
+                       android:layout_centerHorizontal="true"
+                       android:id="@+id/img_rv_friend_profile"
+            />
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:id="@+id/txt_rv_friend_name"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="#53565b"
+                    android:lineSpacingExtra="6sp"
+                    android:layout_marginTop="100dp"
+                    android:text="솝트친구"/>
+            />
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="#53565b"
+                    android:lineSpacingExtra="6sp"
+                    android:layout_marginTop="2dp"
+                    android:id="@+id/int_rv_user_level"
+                    android:layout_marginBottom="4dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/txt_rv_friend_name"
+                    android:gravity="center_horizontal"
+                    android:text="Level. 3"/>
+
+            <ImageView android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:src="@drawable/ic_checked"
+                       android:layout_alignTop="@+id/int_rv_user_num"
+                       android:layout_toStartOf="@+id/img_rv_profile_back"
+                       android:layout_marginTop="2dp"
+                       android:layout_marginEnd="-14dp"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:id="@+id/int_rv_user_num"
+                    android:textColor="#b0b0b0"
+                    android:layout_marginLeft="60dp"
+                    android:layout_below="@+id/int_rv_user_level"
+                    android:lineSpacingExtra="6sp"
+                    android:gravity="end"
+                    android:text="총인증횟수: 5회"/>
+            <Button android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/int_rv_user_num"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/btn_search_notfill"
+                    android:layout_centerHorizontal="true"
+                    android:text="친구 추가"
+                    android:textStyle="bold"
+                    android:textColor="#15696c"/>
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>
+
+
+
+
+
+
+

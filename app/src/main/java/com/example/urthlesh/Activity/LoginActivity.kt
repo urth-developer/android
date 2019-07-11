@@ -42,10 +42,12 @@ class LoginActivity : AppCompatActivity() {
         }
 
 
+
         txtLoginSignup.setOnClickListener {
             val intent = Intent(this@LoginActivity, SignUpActivity::class.java)
             startActivity(intent)
         }
+
     }
     fun isValid(u_id:String,u_pw:String):Boolean
     {
@@ -56,6 +58,7 @@ class LoginActivity : AppCompatActivity() {
         return true
 
     }
+
 
     fun postLoginResponse(u_id:String,u_pw:String)
     {
