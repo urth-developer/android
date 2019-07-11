@@ -6,7 +6,6 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.urthlesh.Adapter.ApplicationDetailAdapter
 import com.example.urthlesh.Mypage.*
 import com.example.urthlesh.R
 import kotlinx.android.synthetic.main.fragment_mypage.*

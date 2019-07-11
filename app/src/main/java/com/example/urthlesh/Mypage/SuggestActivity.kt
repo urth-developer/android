@@ -15,7 +15,7 @@ class SuggestActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_suggest)
 
-        suggest_back.setOnClickListener{
+        suggest_back.setOnClickListener {
             finish()
         }
 

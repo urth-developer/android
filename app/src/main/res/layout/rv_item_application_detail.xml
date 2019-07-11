@@ -50,7 +50,7 @@
                         android:id="@+id/txt_rv_application_detail_date"/>
 
                 <ImageButton
-                        android:id="@+id/rv_application_detail_chalstatus_wait"
+                        android:id="@+id/rv_application_detail_imagebutton"
                         android:contentDescription="@string/description_info"
                         style="@android:style/Widget.Material.Light.Button.Borderless"
                         android:layout_width="wrap_content"

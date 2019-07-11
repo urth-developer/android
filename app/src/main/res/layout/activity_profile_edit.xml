@@ -35,6 +35,7 @@
                     android:layout_width="100dp"
                     android:layout_gravity="center"
                     android:background="@drawable/img_profile"
+                    android:scaleType="centerCrop"
             />
 
             <ImageView

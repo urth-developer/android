@@ -8,36 +8,42 @@
         android:background="#FFFFFF"
         tools:context=".custom_camera.CameraCheckActivity">
 
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:orientation="horizontal"
+            android:gravity="left|center">
 
         <ImageButton
-                android:id="@+id/backback"
+                android:id="@+id/camera_check_back"
                 android:background="@color/transparent"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="5dp"
-                android:layout_gravity="left"
-                android:src="@drawable/ic_backarrow" />
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:scaleType="fitXY"
+                android:layout_marginLeft="16dp"
+                android:src="@drawable/ic_backarrow"/>
 
-    <TextView
-            android:id="@+id/txt_toolbar_product_title"
-            android:text="인증하기"
-            android:paddingLeft="50dp"
-            android:paddingTop="15dp"
-            android:layout_width="300dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="5dp"
-            android:textSize="16dp"
-            android:textColor="#484848"
-            android:textStyle="bold"/>
+        <TextView
+                android:text="인증하기"
+                android:layout_marginLeft="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="#484848"
+                android:textStyle="bold"/>
+
+
+    </LinearLayout>
+
 
 
     <com.example.urthlesh.CustomView.RectangleImageView
-                android:id="@+id/preview"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="62dp" />
+            android:id="@+id/preview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="62dp"/>
     <LinearLayout
             android:id="@+id/control"
             android:layout_width="match_parent"
@@ -56,8 +62,9 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:src="@drawable/btn_success" />
+                android:src="@drawable/btn_success"/>
         <ImageButton
+                android:layout_marginTop="10dp"
                 android:id="@+id/btn_picture_cancel"
                 android:background="@color/transparent"
                 android:scaleType="fitXY"
@@ -65,7 +72,7 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:src="@drawable/btn_fail" />
+                android:src="@drawable/btn_fail"/>
 
 
     </LinearLayout>

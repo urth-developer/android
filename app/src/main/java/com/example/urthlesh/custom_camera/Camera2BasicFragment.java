@@ -415,8 +415,8 @@ public class Camera2BasicFragment extends Fragment
     public void onViewCreated(final View view, Bundle savedInstanceState) {
         view.findViewById(R.id.picture).setOnClickListener(this);
         mTextureView = (AutoFitTextureView) view.findViewById(R.id.texture);
-        ImageButton backbackback = (ImageButton) view.findViewById(R.id.backbackback);
-        backbackback.setOnClickListener(
+        ImageButton camera_main_back = (ImageButton) view.findViewById(R.id.camera_main_back);
+        camera_main_back.setOnClickListener(
                 new Button.OnClickListener() {
                     public void onClick(View v) {
                         getActivity().finish();
