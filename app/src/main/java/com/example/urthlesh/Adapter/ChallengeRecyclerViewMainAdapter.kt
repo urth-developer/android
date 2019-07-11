@@ -17,9 +17,6 @@ import android.view.animation.Animation
 import android.view.animation.ScaleAnimation
 
 
-
-
-
 class ChallengeRecyclerViewMainAdapter(val ctx:Context,val dataList:ArrayList<HomechallengeData>):RecyclerView.Adapter<ChallengeRecyclerViewMainAdapter.Holder>() {
     var lastPosition=-1
 
@@ -35,14 +32,14 @@ class ChallengeRecyclerViewMainAdapter(val ctx:Context,val dataList:ArrayList<Ho
 
     override fun onBindViewHolder(holder: Holder, position: Int){
     Glide.with(ctx)
-    .load(dataList[position].img_url)
+    .load(dataList[position].image)
     .apply(RequestOptions.circleCropTransform())
     .into(holder.img_thumbnail)
 
         Log.v("jangyoungbamggukhyom",position.toString())
 
 
-    holder.title.text = dataList[position].title
+    holder.title.text = dataList[position].name
 
 
         val totalItems = itemCount

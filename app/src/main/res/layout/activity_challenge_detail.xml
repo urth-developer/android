@@ -81,7 +81,7 @@
                 android:layout_width="12dp"
                 android:layout_height="12dp"/>
         <TextView
-                android:id="@+id/txt_challenge_detail_totalnum"
+                android:id="@+id/txt_challenge_detail_participatenum"
                 android:text="444명 참여중"
                 android:textSize="10sp"
                 android:textColor="#53565b"

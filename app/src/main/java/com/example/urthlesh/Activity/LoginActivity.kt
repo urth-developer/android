@@ -29,19 +29,23 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
 
-        btnLoginSubmit.setOnClickListener {
+        btn_startstartstart.setOnClickListener {
+
+
             val login_u_id = edtLoginID.text.toString()
             val login_u_pw: String = edtLoginPW.text.toString()
-            Log.e("loginid",login_u_id)
-            Log.e("loginpw",login_u_pw)
-            if(isValid(login_u_id,login_u_pw))postLoginResponse(login_u_id,login_u_pw)
+            Log.e("loginid", login_u_id)
+            Log.e("loginpw", login_u_pw)
+            if (isValid(login_u_id, login_u_pw)) postLoginResponse(login_u_id, login_u_pw)
 
 
         }
 
-        txtLoginSignup.setOnClickListener{
-            //회원가입이동
-            }
+
+        txtLoginSignup.setOnClickListener {
+            val intent = Intent(this@LoginActivity, SignUpActivity::class.java)
+            startActivity(intent)
+        }
     }
     fun isValid(u_id:String,u_pw:String):Boolean
     {
@@ -52,7 +56,6 @@ class LoginActivity : AppCompatActivity() {
         return true
 
     }
-
 
     fun postLoginResponse(u_id:String,u_pw:String)
     {

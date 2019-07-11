@@ -54,8 +54,8 @@ class MyChallengeAdapter(
                 false
             }
         }
-
         fun bind(item: MyChallengeData) {
+            //var continaer = itemView.rv_item_m
             itemView.rv_item_mychallenge_title.text = item.title
             itemView.rv_item_mychallenge_creator.text = item.creator
             itemView.rv_item_mychallenge_numofchallenge.text = "총"+item.numofchallenge.toString()+"회"

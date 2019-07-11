@@ -11,13 +11,10 @@
 
         <ImageButton
                 android:id="@+id/backback"
-                android:contentDescription="@string/description_info"
-                style="@android:style/Widget.Material.Light.Button.Borderless"
+                android:background="@color/transparent"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="5dp"
-                android:scaleType="fitXY"
-                android:adjustViewBounds="true"
                 android:layout_gravity="left"
                 android:src="@drawable/ic_backarrow" />
 
@@ -53,21 +50,19 @@
 
         <ImageButton
                 android:id="@+id/btn_picture_certificate"
-                android:contentDescription="@string/description_info"
-                style="@android:style/Widget.Material.Light.Button.Borderless"
-                android:scaleType="fitXY"
+                android:background="@color/transparent"
                 android:adjustViewBounds="true"
-                android:layout_width="200dp"
+                android:scaleType="fitXY"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:src="@drawable/btn_success" />
         <ImageButton
                 android:id="@+id/btn_picture_cancel"
-                android:contentDescription="@string/description_info"
-                style="@android:style/Widget.Material.Light.Button.Borderless"
+                android:background="@color/transparent"
                 android:scaleType="fitXY"
                 android:adjustViewBounds="true"
-                android:layout_width="200dp"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:src="@drawable/btn_fail" />

@@ -113,6 +113,7 @@ class MainActivity : AppCompatActivity() {
                 else if(p0 == 2) setToolbarVisibility(View.VISIBLE)
                 else if(p0 == 3) setToolbarVisibility(View.VISIBLE)
             }
+
         })
         tl_main.setupWithViewPager(vp_main)
 
@@ -125,8 +126,11 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-     fun setToolbarVisibility(visiblitilty:Int){
+    fun setToolbarVisibility(visiblitilty:Int){
 
         toolbar_main.visibility=visiblitilty
     }
+
+
+
 }
