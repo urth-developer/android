@@ -22,11 +22,11 @@ class RVChallengeAdapter(val ctx: Context, val dataList: ArrayList<ChallengeData
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
         Glide.with(ctx)
-            .load(dataList[position].img_url)
+            .load(dataList[position].image)
             .into(holder.image)
         holder.title.text = dataList[position].name
         holder.creator.text = dataList[position].creator
-        holder.num_total.text="총 "+dataList[position].num_total.toString() +"회"
+        holder.num_total.text="총 "+dataList[position].count.toString() +"회"
     }
 
 

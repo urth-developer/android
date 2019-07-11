@@ -5,7 +5,7 @@ import com.example.urthlesh.Data.MyChallengeData
 
 data class PostMyChallengeDetailResponse(
     var status:Int,
-    var success:Boolean?,
+    var success:Boolean,
     var message:String,
     var data:ArrayList<MyChallengeData>
 

@@ -13,7 +13,8 @@
 
     >
         <RelativeLayout
-                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
         android:gravity="center_horizontal">
             <!--===하단=============================================-->
 
@@ -150,13 +151,15 @@
         </RelativeLayout>
         <!--===========//라운드 상단===============-->
 
-
         <!--==오늘의 추천 챌린지 시작==-->
         <android.support.v7.widget.RecyclerView
                 android:id="@+id/rv_home_todayChallenge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
         ></android.support.v7.widget.RecyclerView>
+
+
+
 
 
 

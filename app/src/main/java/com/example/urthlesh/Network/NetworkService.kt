@@ -41,17 +41,23 @@ interface NetworkService {
         @Header("token")token:String
     ):Call<PostMyFavoriteChallengeHomeResponse>
 
-    @GET("urth/challenge/together")
-    fun getPostMyChallengeDetailResponse(
-        @Header("Content-Type") content_type:String,
-        @Header("token")token:String
-    ):Call<PostMyChallengeDetailResponse>
 
     @GET("/settings/suggestion")
     fun getApplyListResponse(
         @Header("Content_Type")content_type: String,
         @Header("token")token_type: String
     ): Call<GetApplyListResponse>
+
+
+    @GET("urth/challenge/together")
+    fun getPostMyChallengeDetailResponse(
+        @Header("Content-Type") content_type:String,
+        @Header("token")token:String
+    ):Call<PostMyChallengeDetailResponse>
+
+
+
+
 
 
 }
