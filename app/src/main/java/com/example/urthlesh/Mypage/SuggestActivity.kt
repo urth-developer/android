@@ -19,8 +19,5 @@ class SuggestActivity : AppCompatActivity() {
             finish()
         }
 
-        btn_suggest.setOnClickListener{
-            finish()
-        }
     }
 }

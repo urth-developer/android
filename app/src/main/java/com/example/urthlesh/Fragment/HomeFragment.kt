@@ -153,10 +153,7 @@ class HomeFragment : Fragment() {
 
                     if(response.body()!!.status==200)
                     {
-
-
-
-                            UrthResultHomeDataList.add(response.body()!!.data!!.authCountsByCategory!!.category1)
+                        UrthResultHomeDataList.add(response.body()!!.data!!.authCountsByCategory!!.category1)
                         UrthResultHomeDataList.add(response.body()!!.data!!.authCountsByCategory!!.category2)
                         UrthResultHomeDataList.add(response.body()!!.data!!.authCountsByCategory!!.category3)
                         UrthResultHomeDataList.add(response.body()!!.data!!.authCountsByCategory!!.category4)

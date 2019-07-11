@@ -30,8 +30,6 @@ class LoginActivity : AppCompatActivity() {
 
 
         btn_startstartstart.setOnClickListener {
-
-
             val login_u_id = edtLoginID.text.toString()
             val login_u_pw: String = edtLoginPW.text.toString()
             Log.e("loginid", login_u_id)
@@ -90,4 +88,6 @@ class LoginActivity : AppCompatActivity() {
 
 
     }
+
+
 }

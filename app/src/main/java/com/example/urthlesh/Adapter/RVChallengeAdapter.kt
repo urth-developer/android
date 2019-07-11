@@ -24,7 +24,7 @@ class RVChallengeAdapter(val ctx: Context, val dataList: ArrayList<ChallengeData
         Glide.with(ctx)
             .load(dataList[position].img_url)
             .into(holder.image)
-        holder.title.text = dataList[position].title
+        holder.title.text = dataList[position].name
         holder.creator.text = dataList[position].creator
         holder.num_total.text="총 "+dataList[position].num_total.toString() +"회"
     }
