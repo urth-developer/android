@@ -26,6 +26,7 @@ import com.github.mikephil.charting.data.RadarDataSet
 import com.github.mikephil.charting.data.RadarEntry
 import com.github.mikephil.charting.formatter.IAxisValueFormatter
 import com.github.mikephil.charting.interfaces.datasets.IRadarDataSet
+import kotlinx.android.synthetic.main.fragment_me_usurth.view.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -170,7 +171,6 @@ class MeUsurthFragment : Fragment() {
         chart.setWebLineWidthInner(1f);
         chart.setWebColorInner(Color.WHITE);
         chart.setWebAlpha(100);
-
         // create a custom MarkerView (extend MarkerView) and specify the layout
         // to use for it
 
@@ -189,8 +189,10 @@ class MeUsurthFragment : Fragment() {
             override fun getFormattedValue(value: Float, axis: AxisBase?): String {
                 return mActivities[(value % mActivities.size).toInt()] //as Int];
             }
+
         };
         xAxis.setTextColor(Color.WHITE);
+
 
         var yAxis: YAxis = chart.getYAxis();
         yAxis.setLabelCount(5, false);
@@ -212,7 +214,7 @@ class MeUsurthFragment : Fragment() {
     private fun setData() {
 
         var mul: Float = 80.0f;
-        var min: Float = 20.0f;
+        var min: Float = 0.0f;
         var cnt: Int = 4;
 
         var entries1: ArrayList<RadarEntry> = ArrayList<RadarEntry>()
@@ -234,6 +236,7 @@ class MeUsurthFragment : Fragment() {
         set1.setLineWidth(1f)
         set1.setDrawHighlightCircleEnabled(true)
         set1.setDrawHighlightIndicators(false)
+
 
 
 
