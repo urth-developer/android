@@ -1,6 +1,6 @@
 package com.example.urthlesh.Network.Post
 
-class GetUserResponse (
+data class GetUserResponse (
     val status: Int,
     val success: Boolean,
     val message: String,

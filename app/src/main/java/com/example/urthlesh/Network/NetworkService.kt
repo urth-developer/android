@@ -35,7 +35,7 @@ interface NetworkService {
    @GET("/urth/user/mydata")
     fun getUserResponse(
         @Header("Content-Type") content_type:String,
-        @Body() body:JsonObject
+        @Header("token")token:String
     ): Call <GetUserResponse>
 
     @GET("urth/challenge/favorite")
@@ -57,6 +57,15 @@ interface NetworkService {
         @Header("Content-Type") content_type:String,
         @Header("token")token:String
     ):Call<PostMyChallengeDetailResponse>
+
+    @POST("urth/user/friends/search")
+    fun getFriendSearchResponse(
+        @Header("Content-Type") content_type:String,
+        @Header("token")token:String,
+        @Body()body:JsonObject
+    ): Call <GetFriendSearchResponse>
+
+
 
 
 

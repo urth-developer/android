@@ -32,8 +32,8 @@ class LoginActivity : AppCompatActivity() {
         btn_startstartstart.setOnClickListener {
             val login_u_id = edtLoginID.text.toString()
             val login_u_pw: String = edtLoginPW.text.toString()
-            Log.e("loginid", login_u_id)
-            Log.e("loginpw", login_u_pw)
+          /*  Log.v("large", login_u_id)
+            Log.v("large", login_u_pw)*/
             if (isValid(login_u_id, login_u_pw)) postLoginResponse(login_u_id, login_u_pw)
 
 
@@ -60,13 +60,13 @@ class LoginActivity : AppCompatActivity() {
 
     fun postLoginResponse(u_id:String,u_pw:String)
     {
-      var jsonObject=JSONObject()
+        var jsonObject=JSONObject()
         jsonObject.put("id",u_id)
         jsonObject.put("password",u_pw)
 
         val gsonObject=JsonParser().parse(jsonObject.toString())as JsonObject
         val postLoginResponse: Call<PostLoginResponse> =
-        networkService.postLoginResponse("application/json",gsonObject)
+            networkService.postLoginResponse("application/json",gsonObject)
         postLoginResponse.enqueue(object :Callback<PostLoginResponse>{
             override fun onFailure(call: Call<PostLoginResponse>, t: Throwable) {
                 Log.e("LOGIN FAILED",t.toString())
@@ -76,13 +76,16 @@ class LoginActivity : AppCompatActivity() {
 
                 if(response.isSuccessful){
 
-                  if(response.body()!!.status==200){
-
-                      SharedPreferenceControler.setUserToken(applicationContext,response.body()!!.data!!.token)
-                      startActivity<MainActivity>()
-                  }
-              }
-                 }
+                    if(response.body()!!.status==200){
+                      /*  Log.v("large",response.body()!!.data!!.token)*/
+                        SharedPreferenceControler.setUserToken(applicationContext,response.body()!!.data!!.token)
+                        startActivity<MainActivity>()
+                    }/*else{
+                        Log.v("large","로그인 실패")
+                        Log.v("large",response.body()!!.message)
+                    }*/
+                }
+            }
 
         })
 
