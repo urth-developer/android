@@ -17,7 +17,9 @@ import com.example.urthlesh.Data.HomechallengeData
 import android.view.animation.Animation
 import android.view.animation.ScaleAnimation
 import com.example.urthlesh.DB.SharedPreferenceControler
+import com.example.urthlesh.R
 import com.example.urthlesh.custom_camera.CameraActivity
+import kotlinx.android.synthetic.main.rv_item_main_challenge.view.*
 import org.jetbrains.anko.startActivity
 
 
@@ -36,20 +38,25 @@ class ChallengeRecyclerViewMainAdapter(val ctx:Context,val dataList:ArrayList<Ho
 
     override fun onBindViewHolder(holder: Holder, position: Int){
         if(position!=0&&position!=dataList.size-1){
-        holder.container.setOnClickListener {
-            SharedPreferenceControler.setUserChallengeIdx(ctx,dataList[position].challengeIdx)
-            ctx.startActivity<CameraActivity>()
-        }}
+            holder.container.setOnClickListener {
+                SharedPreferenceControler.setUserChallengeIdx(ctx,dataList[position].challengeIdx)
+                ctx.startActivity<CameraActivity>()
+            }}
+        else if(position==0||position==dataList.size-1)
+        {
+            holder.circle.visibility = View.INVISIBLE
+        }
 
-    Glide.with(ctx)
-    .load(dataList[position].image)
-    .apply(RequestOptions.circleCropTransform())
-    .into(holder.img_thumbnail)
+        Glide.with(ctx)
+            .load(dataList[position].image)
+            .apply(RequestOptions.circleCropTransform())
+            .into(holder.img_thumbnail)
+
 
         Log.v("jangyoungbamggukhyom",position.toString())
 
 
-    holder.title.text = dataList[position].name
+        holder.title.text = dataList[position].name
 
 
         val totalItems = itemCount
@@ -96,19 +103,20 @@ class ChallengeRecyclerViewMainAdapter(val ctx:Context,val dataList:ArrayList<Ho
         }*/
     }
 
-        inner class Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-            val container =
-                itemView.findViewById(com.example.urthlesh.R.id.rv_home_challenge_container) as RelativeLayout
-            var img_thumbnail =
-                itemView.findViewById(com.example.urthlesh.R.id.img_rv_item_main_thumbnail) as ImageView
-            var title = itemView.findViewById(com.example.urthlesh.R.id.txt_rv_item_main_title) as TextView
-        }
+    inner class Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val circle=itemView.findViewById(R.id.rv_item_main_challenge_circle) as ImageView
+        val container =
+            itemView.findViewById(com.example.urthlesh.R.id.rv_home_challenge_container) as RelativeLayout
+        var img_thumbnail =
+            itemView.findViewById(com.example.urthlesh.R.id.img_rv_item_main_thumbnail) as ImageView
+        var title = itemView.findViewById(com.example.urthlesh.R.id.txt_rv_item_main_title) as TextView
+    }
 
     fun printprint(state: Int){
         Log.v("beom","im scrollllllll " + state.toString())
 
     }
-//+adapter에서 특정 position건드리는 부분 이외에는 is clickable false 로 ㄱㄱ
+    //+adapter에서 특정 position건드리는 부분 이외에는 is clickable false 로 ㄱㄱ
     private fun setAnimation(viewToAnimate: View, position: Int) {
         // If the bound view wasn't previously displayed on screen, it's animated
 

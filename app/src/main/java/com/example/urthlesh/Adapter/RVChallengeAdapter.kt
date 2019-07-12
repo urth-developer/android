@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.support.v7.view.menu.MenuView
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,7 +18,7 @@ import com.example.urthlesh.Data.ChallengeData
 import com.example.urthlesh.R
 import org.jetbrains.anko.startActivity
 
-class RVChallengeAdapter(val ctx: Context, val dataList: ArrayList<ChallengeData>) :
+class RVChallengeAdapter(val ctx: Context,val dataList: ArrayList<ChallengeData>) :
     RecyclerView.Adapter<RVChallengeAdapter.Holder>() {
     lateinit var challengeList: ArrayList<ChallengeData>
 
@@ -38,8 +39,12 @@ class RVChallengeAdapter(val ctx: Context, val dataList: ArrayList<ChallengeData
         holder.num_total.text = "총 " + dataList[position].count.toString() + "회"
 
         holder.challengeSet.setOnClickListener {
+            val challengedatailintent = Intent(ctx, ChallengeDetailActivity::class.java);
+            Log.v("check",dataList[position].challengeIdx.toString())
+           // challengedatailintent.putExtra("challengeidx",dataList[position].challengeIdx)
+
             ctx.startActivity<ChallengeDetailActivity>(
-                "title" to dataList[position].name)
+                "challengeIdx" to dataList[position].challengeIdx)
         }
     }
 

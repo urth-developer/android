@@ -40,8 +40,9 @@
 
 
             <EditText
+                    android:inputType="text"
                     android:id="@+id/edtLoginID"
-                    android:layout_width="wrap_content"
+                    android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:textSize="12sp"
                     android:textColor="#b0b0b0"
@@ -63,31 +64,35 @@
                     android:layout_height="18dp"
                     android:layout_width="21.1dp"
                     android:layout_gravity="center"
-                    android:background="@drawable/ic_id"
+                    android:background="@drawable/ic_pw"
                     android:scaleType="centerCrop"
             />
 
             <EditText
+                    android:inputType="textPassword"
                     android:id="@+id/edtLoginPW"
-                    android:layout_width="wrap_content"
+                    android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:textSize="12sp"
                     android:textColor="#b0b0b0"
+
                     android:lineSpacingExtra="4sp"
                     android:hint="비밀번호를 입력하세요"
 
             />
         </LinearLayout>
-        <ImageButton
+        <Button
                 android:layout_marginTop="40dp"
                 android:id="@+id/btn_startstartstart"
                 android:contentDescription="@string/description_info"
-                style="@android:style/Widget.Material.Light.Button.Borderless"
-                android:scaleType="fitXY"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:background="@drawable/btn_search_fill"
+                android:text="로그인"
+                android:layout_marginBottom="30dp"
+                android:textColor="#ffffff"
+                android:layout_width="170dp"
+                android:layout_height="35dp"
                 android:layout_gravity="center"
-                android:src="@drawable/btn_login"
+
 
         />
 
@@ -103,7 +108,7 @@
         />
 
         <View
-                android:layout_marginTop="71dp"
+                android:layout_marginTop="60dp"
                 android:background="#15696c"
                 android:layout_width="14dp"
                 android:layout_height="2dp"

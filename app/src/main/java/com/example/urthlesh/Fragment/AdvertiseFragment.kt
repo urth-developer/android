@@ -24,13 +24,8 @@ class AdvertiseFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-
-
-        val img_url: String = arguments!!.getString("background_url")
-       Log.d("url",img_url);
-       Glide.with(this)
-           .load(img_url)
-           .into(img_fragment_advertise)
+       img_fragment_advertise.setImageResource(arguments!!.getInt( "main_img"))
+0
     }
 
 }

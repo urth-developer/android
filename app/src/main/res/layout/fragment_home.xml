@@ -82,8 +82,9 @@
 
                 <!--로고이미지 대체-->
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                          android:text="Logo"
+                          android:text="URTH"
                           android:textColor="#ffffff"
+                          android:textSize="24sp"
                           android:layout_marginTop="15dp"
                           android:layout_gravity="center_horizontal"
                           android:textStyle="bold"/>

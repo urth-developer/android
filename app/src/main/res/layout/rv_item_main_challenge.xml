@@ -3,15 +3,14 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/rv_home_challenge_container"
         android:gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="0dp"
         android:layout_marginBottom="0dp"
 
 >
-        <!--android:layout_marginRight="15dp"-->
-        <!--android:layout_marginLeft="15dp"-->
-
+    <!--android:layout_marginRight="15dp"-->
+    <!--android:layout_marginLeft="15dp"-->
 
 
 
@@ -19,15 +18,27 @@
             android:id="@+id/img_rv_item_main_thumbnail"
             android:layout_width="150dp"
 
-               android:layout_height="150dp"
+            android:layout_height="150dp"
             android:layout_centerInParent="true"
+    />
+    <ImageView
+            android:id="@+id/rv_item_main_challenge_circle"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/img_circle_black"
+            android:layout_centerInParent="true"
+
+
+
     />
 
     <TextView
             android:layout_centerInParent="true"
+            android:textColor="#ffffff"
+            android:textSize="11sp"
             android:id="@+id/txt_rv_item_main_title"
             android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:text="title"
+            android:text="title"
     />
 
 </RelativeLayout>

@@ -22,30 +22,31 @@ import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.POST
+
 interface NetworkService {
 
     @POST("urth/signup")
     fun postSignupResponse(
-        @Header("Content-Type") content_type:String,
+        @Header("Content-Type") content_type: String,
         @Body() body: JsonObject
-    ): Call <PostSignupResponse>
+    ): Call<PostSignupResponse>
 
     @POST("urth/signin")
     fun postLoginResponse(
-        @Header("Content-Type") content_type:String,
-        @Body() body:JsonObject
+        @Header("Content-Type") content_type: String,
+        @Body() body: JsonObject
     ): Call<PostLoginResponse>
 
     @GET("urth/challenge/summary")
     fun getUrhResultHomeResponse(
-        @Header("Content-Type") content_type:String
-    ):Call<GetUrthResultHomeResponse>
+        @Header("Content-Type") content_type: String
+    ): Call<GetUrthResultHomeResponse>
 
 
-   @GET("/urth/user/mydata")
+    @GET("/urth/user/mydata")
     fun getUserResponse(
-        @Header("Content-Type") content_type:String,
-        @Body() body:JsonObject
+        @Header("Content-Type") content_type: String,
+        @Body() body: JsonObject
     ): Call<PostLoginResponse>
 
     @GET("/urth/challenge/category/{categoryIdx}")
@@ -61,7 +62,9 @@ interface NetworkService {
 
     @GET("/urth/challenge/{challengeIdx}")
     fun getChallengeDetailResponse(
-        @Header("Content-Type") content_type: String
+        @Header("Content-Type") content_type: String,
+        @Header("token") token: String,
+        @Path("challengeIdx") flag:Int
     ): Call<GetChallengeDetailResponse>
 
     @GET("/urth/challenge/{search}")
@@ -72,27 +75,23 @@ interface NetworkService {
 
     @GET("urth/challenge/favorite")
     fun getPostMyFavoriteChallengeResponse(
-        @Header("Content-Type") content_type:String,
-        @Header("token")token:String
-    ):Call<PostMyFavoriteChallengeHomeResponse>
+        @Header("Content-Type") content_type: String,
+        @Header("token") token: String
+    ): Call<PostMyFavoriteChallengeHomeResponse>
 
 
     @GET("/settings/suggestion")
     fun getApplyListResponse(
-        @Header("Content_Type")content_type: String,
-        @Header("token")token_type: String
+        @Header("Content_Type") content_type: String,
+        @Header("token") token_type: String
     ): Call<GetApplyListResponse>
 
 
     @GET("urth/challenge/together")
     fun getPostMyChallengeDetailResponse(
-        @Header("Content-Type") content_type:String,
-        @Header("token")token:String
-    ):Call<PostMyChallengeDetailResponse>
-
-
-
-
+        @Header("Content-Type") content_type: String,
+        @Header("token") token: String
+    ): Call<PostMyChallengeDetailResponse>
 
 
     @Multipart
@@ -102,7 +101,13 @@ interface NetworkService {
         @Part("challengeIdx") challengeIdx: Int,
         @Part cmtImg: MultipartBody.Part
 
-    ):Call<PostCameraResponse>
+    ): Call<PostCameraResponse>
+
+    @GET("urth/user/friends/list")
+    fun getFriendResponse(
+        @Header("Content-Type") content_type:String,
+        @Header("token")token:String
+    ): Call <GetUserResponse>
 
 
 }

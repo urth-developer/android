@@ -2,48 +2,68 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:dividerPadding="1dp"
               android:layout_width="match_parent"
-              android:layout_height="55dp">
+              android:layout_height="55dp"
+              android:gravity="center_vertical"
+>
     <RelativeLayout android:layout_width="wrap_content" android:layout_height="match_parent"
                     android:id="@+id/rl_nav_main_home"
                     android:layout_weight="1"
-                    android:gravity="center">
-        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"></LinearLayout>
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                  android:text="홈"
-                  android:textSize="14dp"
-                  android:textColor="#484848"
-                  android:textStyle="bold"/>
+                    android:gravity="center"
+
+    >
+        <ImageView
+                android:id="@+id/tab_main_1_img"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:background="@drawable/tab_1_home_default"
+        />
+
     </RelativeLayout>
-    <RelativeLayout android:layout_width="wrap_content" android:layout_height="match_parent"
+    <RelativeLayout android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
                     android:id="@+id/rl_nav_main_allurth"
                     android:layout_weight="1"
-                    android:gravity="center" android:layout_alignParentTop="true">
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                  android:textStyle="bold"
-                  android:text="챌린지"
-                  android:textColor="#484848"
-                  android:textSize="14dp"
+                    android:gravity="center"
+
+    >
+        <ImageView
+                android:id="@+id/tab_main_2_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/tab_2_challenge_default"
         />
+
+
     </RelativeLayout>
-    <RelativeLayout android:layout_width="wrap_content" android:layout_height="match_parent"
+    <RelativeLayout android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
                     android:gravity="center"
                     android:layout_weight="1"
-                    android:id="@+id/rl_nav_main_usurth">
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                  android:text="탐라"
-                  android:textSize="14dp"
-                  android:textColor="#484848"
-                  android:textStyle="bold"/>
+
+                    android:id="@+id/rl_nav_main_usurth"
+
+    >
+        <ImageView
+                android:id="@+id/tab_main_3_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/tab_3_history_default"
+        />
+
     </RelativeLayout>
-    <RelativeLayout android:layout_width="wrap_content" android:layout_height="match_parent"
+    <RelativeLayout android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
                     android:id="@+id/rl_nav_main_mypage"
-                    android:layout_weight="1"
-                    android:gravity="center">
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                  android:text="마이"
-                  android:textSize="14dp"
-                  android:textColor="#484848"
-                  android:textStyle="bold"/>
+                    android:gravity="center"
+
+
+    >
+        <ImageView
+                android:id="@+id/tab_main_4_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/tab_4_mypage_default"
+        />
+
     </RelativeLayout>
 
 </LinearLayout>

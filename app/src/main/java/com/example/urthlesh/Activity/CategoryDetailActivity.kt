@@ -81,6 +81,9 @@ class CategoryDetailActivity : AppCompatActivity() {
                         val tmp: ArrayList<ChallengeData> = response.body()!!.data!!
                         Log.v("hee1",tmp.toString())
                         challengeList = tmp
+                        for( i in challengeList ){
+                            Log.d("cc" ,i.challengeIdx.toString())
+                        }
                         //rvChallengeAdapter.challengeList = tmp
                         rvChallengeAdapter = RVChallengeAdapter(applicationContext,challengeList)
                         rv_challenge_category.adapter = rvChallengeAdapter

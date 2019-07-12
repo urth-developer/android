@@ -8,4 +8,3 @@ class GetUserDataResponse (
     val profileImg: String
 
 )
-

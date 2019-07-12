@@ -4,7 +4,7 @@ class GetUserResponse (
     val status: Int,
     val success: Boolean,
     val message: String,
-    val data: GetUserDataResponse?
+    val data: ArrayList<GetUserDataResponse>?
 
 )
 

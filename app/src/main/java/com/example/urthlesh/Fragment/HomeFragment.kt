@@ -59,7 +59,7 @@ class HomeFragment : Fragment() {
 
         //카메라 실행되는 버튼
         btnHomeSync.setOnClickListener {
-            context!!.startActivity<CameraActivity>()
+            context!!.startActivity<MyChallengeDetailActivity>()
         }
 
         dataList= ArrayList()
@@ -94,16 +94,16 @@ class HomeFragment : Fragment() {
 
         ChallengeDataList.add(
             ChallengeData(
-                3,"challenge3 explanation","d",1,
-                "http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",7,"eunbin"))
+                11,"빨대는 이제 뺄 때","d",1,
+                "https://sopt24.s3.ap-northeast-2.amazonaws.com/1562865605566.jpg",2012,"어스"))
         ChallengeDataList.add(
             ChallengeData(
-                3,"challenge3 explanation","d",1,
-                "http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",7,"eunbin"))
+                15,"나만의 이면지 노트 DIY","d",1,
+                "https://sopt24.s3.ap-northeast-2.amazonaws.com/1562866459157.jpg",1829,"어스"))
         ChallengeDataList.add(
             ChallengeData(
-                3,"challenge3 explanation","d",1,
-                "http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",7,"eunbin"))
+                28,"공기 정화 식물로 미세먼지 극복하기","d",1,
+                "https://sopt24.s3.ap-northeast-2.amazonaws.com/1562874949470.jpg",7,"어스"))
         UrthResultHomeDataList= ArrayList()
         challengeRecyclerViewMainAdapter= ChallengeRecyclerViewMainAdapter(context!!,dataList)
         rv_home_challenge.adapter=challengeRecyclerViewMainAdapter
