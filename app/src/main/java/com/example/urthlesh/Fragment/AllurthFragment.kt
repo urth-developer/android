@@ -71,34 +71,34 @@ class AllurthFragment : Fragment() {
 
         var ChallengeList: ArrayList<ChallengeData> = ArrayList()
         ChallengeList.add(ChallengeData(
-            "http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
+            1,"",1,"http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
             "희원이와 함께하는 에코챌린지", "용이 작은누나",127))
         ChallengeList.add(ChallengeData(
-            "http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
+            1,"",1,"http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
             "희원이와 함께하는 에코챌린지", "용이 작은누나",127))
         ChallengeList.add(ChallengeData(
-            "http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
+            1,"",1,"http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
             "희원이와 함께하는 에코챌린지", "용이 작은누나",127))
         ChallengeList.add(ChallengeData(
-            "http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
+            1,"",1,"http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
             "희원이와 함께하는 에코챌린지", "용이 작은누나",127))
         ChallengeList.add(ChallengeData(
-            "http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
+            1,"",1,"http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
             "희원이와 함께하는 에코챌린지", "용이 작은누나",127))
         ChallengeList.add(ChallengeData(
-            "http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
+            1,"",1,"http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
             "희원이와 함께하는 에코챌린지", "용이 작은누나",127))
         ChallengeList.add(ChallengeData(
-            "http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
+            1,"",1,"http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
             "희원이와 함께하는 에코챌린지", "용이 작은누나",127))
         ChallengeList.add(ChallengeData(
-            "http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
+            1,"",1,"http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
             "희원이와 함께하는 에코챌린지", "용이 작은누나",127))
         ChallengeList.add(ChallengeData(
-            "http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
+            1,"",1,"http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
             "희원이와 함께하는 에코챌린지", "용이 작은누나",127))
         ChallengeList.add(ChallengeData(
-            "http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
+            1,"",1,"http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
             "희원이와 함께하는 에코챌린지", "용이 작은누나",127))
 
         rvChallengeAdapter = RVChallengeAdapter(context!!,ChallengeList)

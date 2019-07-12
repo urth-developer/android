@@ -2,6 +2,7 @@ package com.example.urthlesh.Adapter
 
 
 import android.content.Context
+import android.content.Intent
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
@@ -15,6 +16,9 @@ import com.bumptech.glide.request.RequestOptions
 import com.example.urthlesh.Data.HomechallengeData
 import android.view.animation.Animation
 import android.view.animation.ScaleAnimation
+import com.example.urthlesh.DB.SharedPreferenceControler
+import com.example.urthlesh.custom_camera.CameraActivity
+import org.jetbrains.anko.startActivity
 
 
 class ChallengeRecyclerViewMainAdapter(val ctx:Context,val dataList:ArrayList<HomechallengeData>):RecyclerView.Adapter<ChallengeRecyclerViewMainAdapter.Holder>() {
@@ -31,6 +35,12 @@ class ChallengeRecyclerViewMainAdapter(val ctx:Context,val dataList:ArrayList<Ho
     }
 
     override fun onBindViewHolder(holder: Holder, position: Int){
+        if(position!=0&&position!=dataList.size-1){
+        holder.container.setOnClickListener {
+            SharedPreferenceControler.setUserChallengeIdx(ctx,dataList[position].challengeIdx)
+            ctx.startActivity<CameraActivity>()
+        }}
+
     Glide.with(ctx)
     .load(dataList[position].image)
     .apply(RequestOptions.circleCropTransform())
@@ -46,6 +56,7 @@ class ChallengeRecyclerViewMainAdapter(val ctx:Context,val dataList:ArrayList<Ho
         val view = holder.itemView
 
 
+
 //
 //        val adapterPosition = holder.adapterPosition
 //
@@ -55,7 +66,7 @@ class ChallengeRecyclerViewMainAdapter(val ctx:Context,val dataList:ArrayList<Ho
 //        }
 
 
-       // setAnimation(holder.itemView,position)
+        //setAnimation(holder.itemView,position)
 
 /*  if (position == 0 )
     {
@@ -94,10 +105,10 @@ class ChallengeRecyclerViewMainAdapter(val ctx:Context,val dataList:ArrayList<Ho
         }
 
     fun printprint(state: Int){
-        Log.v("beom","im scrollllllll >>>  " + state.toString())
+        Log.v("beom","im scrollllllll " + state.toString())
 
     }
-
+//+adapter에서 특정 position건드리는 부분 이외에는 is clickable false 로 ㄱㄱ
     private fun setAnimation(viewToAnimate: View, position: Int) {
         // If the bound view wasn't previously displayed on screen, it's animated
 

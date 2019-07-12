@@ -3,6 +3,8 @@ package com.example.urthlesh.Network
 import retrofit2.Call
 import com.example.urthlesh.Fragment.UsurthFragment
 import com.example.urthlesh.Network.Post.*
+import com.example.urthlesh.Network.Post.*
+
 
 
 import com.google.gson.JsonObject
@@ -43,12 +45,23 @@ interface NetworkService {
     ): Call<GetApplyListResponse>
 
 
+    @GET("urth/challenge/together")
+    fun getPostMyChallengeDetailResponse(
+        @Header("Content-Type") content_type:String,
+        @Header("token")token:String
+    ):Call<PostMyChallengeDetailResponse>
+
+
+
+
+
+
     @Multipart
     @POST("/urth/auth")
     fun postCameraResponse(
-        @Header("token") token:String,
-
-        @Part cmtImg:MultipartBody.Part
+        @Header("token") token: String,
+        @Part("challengeIdx") challengeIdx: Int,
+        @Part cmtImg: MultipartBody.Part
 
     ):Call<PostCameraResponse>
 

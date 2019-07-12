@@ -19,6 +19,14 @@ class CameraActivity : AppCompatActivity() {
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+
+//        var intent:Intent=getIntent()
+//        var challengIdx:Int
+//            challengIdx=intent.getIntExtra("challengeIdx",0)
+
+        // Shared Preference에 저장
+
+
         if (requestCode == REQUEST_CAMERA_CHECK) {
             if (resultCode == Activity.RESULT_OK) finish()
         }

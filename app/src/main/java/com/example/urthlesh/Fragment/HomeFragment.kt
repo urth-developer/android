@@ -19,10 +19,12 @@ import com.example.urthlesh.Adapter.RVChallengeAdapter
 import com.example.urthlesh.DB.SharedPreferenceControler
 import com.example.urthlesh.Data.ChallengeData
 import com.example.urthlesh.Data.HomechallengeData
+import com.example.urthlesh.Data.MyChallengeData
 import com.example.urthlesh.Network.ApplicationController
 import com.example.urthlesh.Network.NetworkService
 import com.example.urthlesh.Network.Post.CategoryHomeData
 import com.example.urthlesh.Network.Post.GetUrthResultHomeResponse
+import com.example.urthlesh.Network.Post.PostMyChallengeDetailResponse
 import com.example.urthlesh.Network.Post.PostMyFavoriteChallengeHomeResponse
 import com.example.urthlesh.custom_camera.CameraActivity
 
@@ -91,17 +93,17 @@ class HomeFragment : Fragment() {
             // 오늘의 챌린지
         ChallengeDataList.add(
             ChallengeData(
-                "https://image.shutterstock.com/z/stock-vector-vector-flat-illustration-little-men-prepare-for-the-day-of-the-earth-save-the-planet-save-energy-1060898801.jpg",
+                1,"challenge1 explanation",1,"https://image.shutterstock.com/z/stock-vector-vector-flat-illustration-little-men-prepare-for-the-day-of-the-earth-save-the-planet-save-energy-1060898801.jpg",
                 "챌린지 1","eunbin",4))
         ChallengeDataList.add(
             ChallengeData(
-                "http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
+                2,"challenge2 explanation",2,"http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
                 "챌린지 2","jisoo",5))
         ChallengeDataList.add(
             ChallengeData(
-                "http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
-                "챌린지 3","Manhyeuk",4))
-        UrthResultHomeDataList= ArrayList()
+                3,"challenge3 explanation",3,"http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
+                "챌린지 3","Manhyeuk",10))
+          UrthResultHomeDataList= ArrayList()
         challengeRecyclerViewMainAdapter= ChallengeRecyclerViewMainAdapter(context!!,dataList)
         rv_home_challenge.adapter=challengeRecyclerViewMainAdapter
         rv_home_challenge.layoutManager=TurnLayoutManager(context!!,TurnLayoutManager.Gravity.START,TurnLayoutManager.Orientation.HORIZONTAL,1200,200,true)
@@ -154,17 +156,14 @@ class HomeFragment : Fragment() {
 
                     if(response.body()!!.status==200)
                     {
-
-
-
-                            UrthResultHomeDataList.add(response.body()!!.data!!.authCountsByCategory!!.category1)
+                        UrthResultHomeDataList.add(response.body()!!.data!!.authCountsByCategory!!.category1)
                         UrthResultHomeDataList.add(response.body()!!.data!!.authCountsByCategory!!.category2)
                         UrthResultHomeDataList.add(response.body()!!.data!!.authCountsByCategory!!.category3)
                         UrthResultHomeDataList.add(response.body()!!.data!!.authCountsByCategory!!.category4)
                         UrthResultHomeDataList.add(response.body()!!.data!!.authCountsByCategory!!.category5)
 
 
-                        home_comment_people.text=response.body()!!.data!!.totalUserCount!!.toString()+"명의 사람들과 함께"
+                        home_comment_people.text=response.body()!!.data!!.totalUserCount.toString()+"명의 사람들과 함께"
                         home_comment_turtle.text="바다거북"+UrthResultHomeDataList[0].toString()+"마리를 살렸어요"
                         home_comment_air.text="공기"+UrthResultHomeDataList[1].toString()+"L를 깨끗하게 하고"
                         home_comment_tree.text="나무"+UrthResultHomeDataList[2].toString()+"그루를 살리고"
@@ -214,6 +213,33 @@ class HomeFragment : Fragment() {
         })
 
     }
+//    fun getChallengeDataList(){
+//        val getPostMyChallengeTodayResponse=networkService.getPostMyChallengeTodayResponse("application/json",SharedPreferenceControler.getUseToken(context!!))
+//        getPostMyChallengeTodayResponse.enqueue(object : Callback<PostMyChallengeDetailResponse>{
+//            override fun onFailure(call: Call<PostMyChallengeDetailResponse>, t: Throwable) {
+//                Log.v("eee","오늘의 챌린지 통신 실패")
+//            }
+//
+//            override fun onResponse(
+//                call: Call<PostMyChallengeDetailResponse>,
+//                response: Response<PostMyChallengeDetailResponse>
+//            ) {
+//                if(response.isSuccessful)
+//                {
+//                    if(response.body()!!.status==200)
+//                    {Log.v("eee","오늘의 챌린지 통신 거의 성공")
+//                        var newChallengeDataList:ArrayList<MyChallengeData> = ArrayList<MyChallengeData>()
+//                        newChallengeDataList.addAll(response.body()!!.data)
+//                        rvChallengeAdapter.dataList.clear()
+//                        rvChallengeAdapter.dataList.addAll(newChallengeDataList)
+//
+//
+//                    }
+//                }
+//                 }
+//
+//        })
+//    }
 
 
 }

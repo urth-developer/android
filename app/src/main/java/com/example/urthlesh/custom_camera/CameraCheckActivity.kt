@@ -24,6 +24,7 @@ import kotlinx.android.synthetic.main.fragment_mypage.*
 import okhttp3.MediaType
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
+import org.jetbrains.anko.ctx
 import org.jetbrains.anko.startActivity
 import java.io.ByteArrayOutputStream
 import java.io.InputStream
@@ -35,6 +36,9 @@ class CameraCheckActivity : AppCompatActivity() {
     val networkService:NetworkService by lazy{
         ApplicationController.instance.networkService
     }
+
+   // private val shared = this.getSharedPreferences("",0)
+//    var challenge_idx=SharedPreferenceControler.getUsrChallengeIdx(this)
 
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -106,7 +110,11 @@ class CameraCheckActivity : AppCompatActivity() {
 
         val picture_rb = MultipartBody.Part.createFormData("image","ShinJisoo",photoBody)
 
-        val postCameraRequestBody = networkService.postCameraResponse(token,picture_rb)
+        //SharedPreference에서 challengeIdx받기
+       // val challengeIdx = shared.getInt("",1)
+        var challenge_idx=SharedPreferenceControler.getUsrChallengeIdx(this)
+
+        val postCameraRequestBody = networkService.postCameraResponse(token,challenge_idx,picture_rb)
 
 
     }
