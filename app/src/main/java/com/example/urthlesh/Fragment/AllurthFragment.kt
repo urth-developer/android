@@ -50,8 +50,6 @@ class AllurthFragment : Fragment() {
 
         getTop10ChallengeListResponse()
 
-        //rvChallengeAdapter = RVChallengeAdapter(context!!, top10List)
-        //rv_top10.adapter = rvChallengeAdapter
         val lm = LinearLayoutManager(context!!)
         rv_top10_challenge.layoutManager = lm
         rv_top10_challenge.setHasFixedSize(true)
@@ -115,8 +113,8 @@ class AllurthFragment : Fragment() {
 
     }
 
-    private fun getTop10ChallengeListResponse() {
 
+    private fun getTop10ChallengeListResponse() {
 
         val getTop10ChallengeListResponse = networkService.getTop10ChallengeListResponse(
             "application/json"

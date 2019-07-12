@@ -28,10 +28,8 @@ class CategoryDetailActivity : AppCompatActivity() {
     }
     var challengeList: ArrayList<ChallengeData> = ArrayList()
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(com.example.urthlesh.R.layout.activity_category_detail)
         btn_back_category_detail.setOnClickListener {
             finish()
@@ -84,7 +82,7 @@ class CategoryDetailActivity : AppCompatActivity() {
                         Log.v("hee1",tmp.toString())
                         challengeList = tmp
                         //rvChallengeAdapter.challengeList = tmp
-                        rvChallengeAdapter = RVChallengeAdapter(applicationContext, challengeList)
+                        rvChallengeAdapter = RVChallengeAdapter(applicationContext,challengeList)
                         rv_challenge_category.adapter = rvChallengeAdapter
                         rvChallengeAdapter.notifyDataSetChanged()
 

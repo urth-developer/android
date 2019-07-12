@@ -15,10 +15,12 @@ import retrofit2.Response
 
 class ChallengeDetailActivity : AppCompatActivity() {
     lateinit var title: String
+    //lateinit var ChallengeIdx:Int
+
     val networkService: NetworkService by lazy {
         ApplicationController.instance.networkService
     }
-    var challengeDetail: ArrayList<ChallengeData> = ArrayList()
+    var challengeDetail: ChallengeData? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,10 +54,11 @@ class ChallengeDetailActivity : AppCompatActivity() {
                 Log.v("hee1","통신 시작")
                 if(response.isSuccessful){
                     if(response.body()!!.status == 200){
-                        val tmp:ArrayList<ChallengeData> = response.body()!!.data!!
-                        Log.v("hee1",tmp.toString())
-                        challengeDetail = tmp
+                        challengeDetail = response.body()!!.data
 
+                       // ChallengeIdx= intent.getStringExtra("challengeidx")
+                        /*txt_challenge_detail_title.text=challengeDetail.name
+                        txt_challenge_detail_creator.text=challengeDetail.creator*/
                     }
                 }
             }

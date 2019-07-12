@@ -22,6 +22,10 @@ import java.util.*
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
+
+
+
+
 class UsurthFragment : Fragment() {
 
     override fun onCreateView(
@@ -50,7 +54,7 @@ class UsurthFragment : Fragment() {
         val navUsurthLayout: View = (context!!.getSystemService(android.content.Context.LAYOUT_INFLATER_SERVICE)as LayoutInflater)
             .inflate(R.layout.navigation_usurth,null,false)
         us_earth_me_friend.getTabAt(0)!!.customView = navUsurthLayout.findViewById(R.id.navigation_all_urth_me) as RelativeLayout
-        us_earth_me_friend.getTabAt(0)!!.customView = navUsurthLayout.findViewById(R.id.navigation_all_urth_friend) as RelativeLayout
+        us_earth_me_friend.getTabAt(1)!!.customView = navUsurthLayout.findViewById(R.id.navigation_all_urth_friend) as RelativeLayout
 
 
 

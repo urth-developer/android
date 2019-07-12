@@ -39,7 +39,7 @@ class ActivityCreatePhoto : AppCompatActivity() {
             finish()
         }
         btn_cancel_create_photo.setOnClickListener {
-            setResult(Activity.RESULT_FIRST_USER)
+            setResult(Activity.RESULT_CANCELED)
             finish()
         }
         btn_next_create_photo.setOnClickListener{
@@ -128,7 +128,7 @@ class ActivityCreatePhoto : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if(requestCode == 127){
-            if(resultCode == Activity.RESULT_FIRST_USER){
+            if(resultCode == Activity.RESULT_CANCELED){
                 finish()
             }
         }

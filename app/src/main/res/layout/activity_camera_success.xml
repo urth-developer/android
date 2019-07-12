@@ -3,7 +3,10 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+>
 
     <include
             android:id="@+id/toolbar_camera_complement"
@@ -40,7 +43,7 @@
                 android:id="@+id/image_view"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:background="@drawable/img_illust_ecology"
+                android:background="@drawable/img_progress_ecology"
         />
 
 
@@ -54,26 +57,43 @@
                 android:gravity="center_horizontal"
                 android:text="(12/50)"
         />
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:layout_marginTop="23dp"
+        >
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textColor="#53565b"
+                    android:letterSpacing="-0.02"
+                    android:lineSpacingExtra="8sp"
+                    android:gravity="center"
+                    android:text="아아아아아닉네임"
+            />
 
         <TextView
-                android:layout_marginTop="23dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:textColor="#53565b"
                 android:letterSpacing="-0.02"
                 android:lineSpacingExtra="8sp"
-                android:gravity="center_horizontal"
-                android:text="아아아아아닉네임님의 N번째 인증이에요"
+                android:gravity="center"
+                android:text="님의 N번째 인증이에요"
         />
+
+        </LinearLayout>
         <ImageButton
                 android:layout_marginTop="102dp"
                 android:id="@+id/btn_picture_cancel"
                 android:background="@color/transparent"
                 android:scaleType="fitXY"
-                android:adjustViewBounds="true"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
+                android:layout_width="240dp"
+                android:layout_height="38dp"
                 android:layout_gravity="center"
                 android:src="@drawable/btn_seeothers" />
 

@@ -9,8 +9,8 @@
         android:orientation="vertical"
 >
     <include
-            android:id="@+id/toolbar_mypage"
-            layout="@layout/toolbar_mypage"/>
+            android:id="@+id/toolbar_suggest"
+            layout="@layout/toolbar_suggest"/>
 
     <LinearLayout
             android:layout_width="match_parent"
@@ -43,7 +43,7 @@
         />
 
         <EditText
-                android:layout_width="320dp"
+                android:layout_width="280dp"
                 android:layout_height="343dp"
                 android:layout_gravity="center"
                 android:background="@drawable/suggest_border"

@@ -24,6 +24,7 @@ class RVChallengeAdapter(val ctx: Context, val dataList: ArrayList<ChallengeData
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): Holder {
         val view: View = LayoutInflater.from(ctx).inflate(R.layout.rv_item_challengeset, viewGroup, false)
         return Holder(view)
+
     }
 
     override fun getItemCount(): Int = dataList.size
@@ -41,6 +42,7 @@ class RVChallengeAdapter(val ctx: Context, val dataList: ArrayList<ChallengeData
                 "title" to dataList[position].name)
         }
     }
+
 
     inner class Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 

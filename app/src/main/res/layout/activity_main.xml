@@ -13,15 +13,15 @@
             android:orientation="vertical"
     >
         <!--toolbar 넣기-->
-        <include
-                android:id="@+id/toolbar_main"
-                layout="@layout/toolbar_main"/>
+        <!--<include-->
+                <!--android:id="@+id/toolbar_main"-->
+                <!--layout="@layout/toolbar_main"/>-->
 
 
         <android.support.v4.view.ViewPager
                 android:id="@+id/vp_main"
                 android:layout_width="match_parent"
-                android:layout_height="700dp"></android.support.v4.view.ViewPager>
+                android:layout_height="660dp"></android.support.v4.view.ViewPager>
         <android.support.design.widget.TabLayout
                 android:id="@+id/tl_main"
                 app:tabIndicatorHeight="0dp"

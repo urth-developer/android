@@ -54,11 +54,11 @@ class MyChallengeAdapter(
                 false
             }
         }
-
         fun bind(item: MyChallengeData) {
-            itemView.rv_item_mychallenge_title.text = item.title
+            //var continaer = itemView.rv_item_m
+            itemView.rv_item_mychallenge_title.text = item.name
             itemView.rv_item_mychallenge_creator.text = item.creator
-            itemView.rv_item_mychallenge_numofchallenge.text = "총"+item.numofchallenge.toString()+"회"
+            itemView.rv_item_mychallenge_numofchallenge.text = "총"+item.count.toString()+"회"
         }
     }
 }

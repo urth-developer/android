@@ -16,10 +16,10 @@ import com.example.urthlesh.Fragment.timelineRecyclerViewAdapter
 import com.example.urthlesh.R
 import kotlinx.android.synthetic.main.fragment_me_usurth.*
 
-var itemCount = 0
 
-class TimelineRecyclerViewAdapter(val ctx: Context, val dataList: ArrayList<Timeline>): RecyclerView.Adapter<TimelineRecyclerViewAdapter.Holder>(){
-    lateinit var deepTimelineAdapter:DeepTimelineAdapter
+
+class TimelineRecyclerViewAdapter(val ctx: Context, val dataList: ArrayList<Timeline>): RecyclerView.Adapter<TimelineRecyclerViewAdapter.Holder>() {
+    lateinit var deepTimelineAdapter : DeepTimelineAdapter
     var adapterArray: ArrayList<Int> = ArrayList()
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): TimelineRecyclerViewAdapter.Holder {
@@ -33,8 +33,17 @@ class TimelineRecyclerViewAdapter(val ctx: Context, val dataList: ArrayList<Time
 
     override fun getItemCount(): Int {
 
+        return dataList.size
+    }
+  /*  override fun getItemCount(): Int {
+    var cnt: Int = 0
         return dataList.size }
-
+    fun getAuthCount():Int
+    {
+        for(var cnt: Int=0 ; i < dataList.size ;i++)
+        return dataList.size
+    }
+*/
 
     override fun onBindViewHolder(holder: TimelineRecyclerViewAdapter.Holder, position: Int) {
         holder.photodate.text=dataList[position].photodate

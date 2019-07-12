@@ -69,8 +69,8 @@ public class CameraCheckActivity extends AppCompatActivity {
                 }
         );
 
-        ImageButton backback = (ImageButton) findViewById(R.id.backback);
-        backback.setOnClickListener(
+        ImageButton camera_check_back = (ImageButton) findViewById(R.id.camera_check_back);
+        camera_check_back.setOnClickListener(
                 new Button.OnClickListener() {
                     public void onClick(View v) {
                         setResult(RESULT_OK);
