@@ -20,26 +20,29 @@ class ActivityCreateTitle : AppCompatActivity() {
             finish()
         }
 
-        btn_back.setOnClickListener{
+        btn_back.setOnClickListener {
             finish()
         }
-        btn_next.setOnClickListener{
+        btn_next.setOnClickListener {
 
             val create_title = edit_txt_createtitle.text.toString()
             if (create_title == "")
                 edit_txt_createtitle.requestFocus()
-                else {
+            else {
                 val createnextcategory = Intent(this, ActivityCreateCategory::class.java);
+                val createtitle:String = edit_txt_createtitle .getText().toString();
+                createnextcategory.putExtra("createtitle",createtitle)
                 startActivityForResult(createnextcategory, 127)
             }
 
-            }
+
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if(requestCode == 127){
-            if(resultCode == Activity.RESULT_FIRST_USER){
+        if (requestCode == 127) {
+            if (resultCode == Activity.RESULT_FIRST_USER) {
                 finish()
             }
         }

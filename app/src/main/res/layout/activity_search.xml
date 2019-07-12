@@ -7,13 +7,13 @@
         android:layout_height="match_parent"
         tools:context=".Activity.SearchActivity">
     <ImageView
-            android:layout_marginTop="33dp"
+            android:layout_marginTop="40dp"
             android:layout_marginLeft="-15dp"
             android:layout_marginRight="-15dp"
             android:background="@drawable/bg_search"
             android:layout_width="match_parent"
             android:layout_height="291dp"/>
-    <RelativeLayout android:layout_width="match_parent" android:layout_height="48dp" android:background="#ffffff">
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="48dp" android:background="@drawable/border_search_toolbar">
         <ImageView
                 android:src="@drawable/ic_backarrow"
                 android:layout_width="24dp"
@@ -53,8 +53,103 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
             <TextView
+                    android:id="@+id/txt_recomend_search1"
                     android:background="@drawable/border_round1"
                     android:text="플라스틱"
+                    android:textSize="12sp"
+                    android:textColor="#53565b"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="7dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            <TextView
+                    android:id="@+id/txt_recomend_search2"
+                    android:background="@drawable/border_round2"
+                    android:text="종이빨대"
+                    android:textSize="12sp"
+                    android:textColor="#53565b"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="7dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            <TextView
+                    android:id="@+id/txt_recomend_search3"
+                    android:background="@drawable/border_round2"
+                    android:text="종이빨대인기인기"
+                    android:textSize="12sp"
+                    android:textColor="#53565b"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="7dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+                android:id="@+id/txt_recomend_search4"
+                android:background="@drawable/border_round4"
+                android:text="플라스틱"
+                android:textSize="12sp"
+                android:textColor="#53565b"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="7dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginRight="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        <TextView
+                android:id="@+id/txt_recomend_search5"
+                android:background="@drawable/border_round4"
+                android:text="할로할로할로"
+                android:textSize="12sp"
+                android:textColor="#53565b"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="7dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginRight="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        <TextView
+                android:id="@+id/txt_recomend_search6"
+                android:background="@drawable/border_round1"
+                android:text="종이빨대인기인기"
+                android:textSize="12sp"
+                android:textColor="#53565b"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="7dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginRight="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+    </LinearLayout>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <TextView
+                    android:id="@+id/txt_recomend_search7"
+                    android:background="@drawable/border_round2"
+                    android:text="플라스틱"
+                    android:textSize="12sp"
+                    android:textColor="#53565b"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="7dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            <TextView
+                    android:id="@+id/txt_recomend_search8"
+                    android:background="@drawable/border_round3"
+                    android:text="첵스초코초코초코"
                     android:textSize="12sp"
                     android:textColor="#53565b"
                     android:paddingHorizontal="12dp"

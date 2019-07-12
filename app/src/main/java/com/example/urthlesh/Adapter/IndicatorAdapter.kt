@@ -3,7 +3,6 @@ package com.example.urthlesh.Adapter
 import android.content.Context
 import android.graphics.drawable.Drawable
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -38,11 +37,10 @@ class IndicatorAdapter(val context: Context,var dataList:ArrayList<Homechallenge
     }
 
     override fun onBindViewHolder(holder: IndexListViewHolder, position: Int) {
-        Log.v("eunbini",position.toString())
-            val asset = context.resources.getDrawable(
-                if(position==0||position==dataList.size-1) R.drawable.trans_circle
-                else if(indexList[position]) R.drawable.fill_circle
-                else R.drawable.stoke_circle
+       val asset = context.resources.getDrawable(
+           if(position==0||position==dataList.size-1) R.drawable.trans_circle
+           else if(indexList[position]) R.drawable.fill_circle
+       else R.drawable.stoke_circle
        )
         holder.bind(asset)
         }

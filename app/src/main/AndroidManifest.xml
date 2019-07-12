@@ -41,6 +41,7 @@
         <activity android:name=".Activity.SignUpActivity">
         </activity>
 
+
         <activity android:name=".Activity.ChallengeDetailActivity">
         </activity>
         <activity android:name=".Activity.SearchActivity">
@@ -76,6 +77,7 @@
         </activity>
         <activity android:name=".Activity.MainActivity">
         </activity>
+        <activity android:name=".ChallengeCreate.ActivityCreateCheck"></activity>
         <activity android:name=".Activity.AddFriendActivity">
         </activity>
         <activity android:name=".ChallengeCreate.ActivityCreateTitle">
@@ -85,6 +87,8 @@
         <activity android:name=".ChallengeCreate.ActivityCreateCategory">
         </activity>
         <activity android:name=".ChallengeCreate.ActivityCreatePhoto">
+        </activity>
+        <activity android:name=".ChallengeCreate.ActivityCreateComplete">
         </activity>
         <activity android:name=".Activity.CategoryDetailActivity">
         </activity>

@@ -74,16 +74,13 @@ class HomeFragment : Fragment() {
             // 오늘의 챌린지
         ChallengeDataList.add(
             ChallengeData(
-                "https://image.shutterstock.com/z/stock-vector-vector-flat-illustration-little-men-prepare-for-the-day-of-the-earth-save-the-planet-save-energy-1060898801.jpg",
-                "챌린지 1","eunbin",4))
+                1,"","",1,"",1,""))
         ChallengeDataList.add(
             ChallengeData(
-                "http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
-                "챌린지 2","jisoo",5))
+                1,"","",1,"",1,""))
         ChallengeDataList.add(
             ChallengeData(
-                "http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
-                "챌린지 3","Manhyeuk",4))
+                1,"","",1,"",1,""))
         challengeRecyclerViewMainAdapter= ChallengeRecyclerViewMainAdapter(context!!,dataList)
         rv_home_challenge.adapter=challengeRecyclerViewMainAdapter
                 rv_home_challenge.layoutManager=TurnLayoutManager(context!!,TurnLayoutManager.Gravity.START,TurnLayoutManager.Orientation.HORIZONTAL,1200,200,true)

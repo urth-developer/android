@@ -5,16 +5,26 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import com.example.urthlesh.Activity.CategoryDetailActivity
+import com.example.urthlesh.Activity.SearchActivity
 import com.example.urthlesh.Adapter.AdvertiseAdapter
 import com.example.urthlesh.Adapter.RVChallengeAdapter
 import com.example.urthlesh.ChallengeCreate.ActivityCreateTitle
 import com.example.urthlesh.Data.ChallengeData
+import com.example.urthlesh.Network.ApplicationController
+import com.example.urthlesh.Network.NetworkService
+import com.example.urthlesh.Network.Post.GetTop10ChallengeListResponse
 import com.example.urthlesh.R
+import kotlinx.android.synthetic.main.activity_category_detail.*
 import kotlinx.android.synthetic.main.fragment_allurth.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 class AllurthFragment : Fragment() {
@@ -25,86 +35,99 @@ class AllurthFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_allurth, container, false)
     }
+    val networkService: NetworkService by lazy {
+        ApplicationController.instance.networkService
+    }
 
-    lateinit var rvChallengeAdapter : RVChallengeAdapter
+
+    lateinit var rvChallengeAdapter: RVChallengeAdapter
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        var top10List:ArrayList<ChallengeData> = ArrayList()
 
+       /* rvChallengeAdapter = RVChallengeAdapter(context!!, top10List)
+        rv_top10.adapter = rvChallengeAdapter
+        val lm = LinearLayoutManager(context!!)
+       rv_challenge_category.layoutManager = lm
+       rv_challenge_category.setHasFixedSize(true)*/
+
+        getTop10ChallengeListResponse()
 
         configureAdvertiseTab()
+
+        btn_search_allurth.setOnClickListener {
+            var searchitent = Intent(activity, SearchActivity::class.java);
+            context!!.startActivity(searchitent)
+        }
 
         btn_create.setOnClickListener {
             var createintent = Intent(activity, ActivityCreateTitle::class.java);
             context!!.startActivity(createintent)
         }
         imgcategory1.setOnClickListener {
-            var intent = Intent(activity, CategoryDetailActivity::class.java);
-            intent.putExtra("title", "카테고리1")
-            intent.putExtra("main_img","https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/58383648_1714122605401284_8261916106969579520_o.jpg?_nc_cat=107&_nc_ht=scontent-icn1-1.xx&oh=5685d155cc3622b1535485166619daff&oe=5D756045")
-            context!!.startActivity(intent)
+            var categotyintent = Intent(activity, CategoryDetailActivity::class.java);
+            categotyintent.putExtra("title", "일회용품")
+            categotyintent.putExtra(
+                "main_img",
+                R.drawable.img_category_dispoable)
+            context!!.startActivity(categotyintent)
         }
         imgcategory2.setOnClickListener {
-            var intent = Intent(activity, CategoryDetailActivity::class.java);
-            intent.putExtra("title", "카테고리2")
-            intent.putExtra("main_img","https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/58383648_1714122605401284_8261916106969579520_o.jpg?_nc_cat=107&_nc_ht=scontent-icn1-1.xx&oh=5685d155cc3622b1535485166619daff&oe=5D756045")
-            context!!.startActivity(intent)
+            var categoryintent = Intent(activity, CategoryDetailActivity::class.java);
+            categoryintent.putExtra("title", "대기")
+            categoryintent.putExtra(
+                "main_img",
+                R.drawable.img_category_air)
+            context!!.startActivity(categoryintent)
         }
         imgcategory3.setOnClickListener {
-            var intent = Intent(activity, CategoryDetailActivity::class.java);
-            intent.putExtra("title", "카테고리3")
-            intent.putExtra("main_img","https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/58383648_1714122605401284_8261916106969579520_o.jpg?_nc_cat=107&_nc_ht=scontent-icn1-1.xx&oh=5685d155cc3622b1535485166619daff&oe=5D756045")
-            context!!.startActivity(intent)
+            var categoryintent = Intent(activity, CategoryDetailActivity::class.java);
+            categoryintent.putExtra("title", "자원")
+            categoryintent.putExtra(
+                "main_img",
+                R.drawable.img_category_tree)
+            context!!.startActivity(categoryintent)
         }
         imgcategory4.setOnClickListener {
-            var intent = Intent(activity, CategoryDetailActivity::class.java);
-            intent.putExtra("title", "카테고리4")
-            intent.putExtra("main_img","https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/58383648_1714122605401284_8261916106969579520_o.jpg?_nc_cat=107&_nc_ht=scontent-icn1-1.xx&oh=5685d155cc3622b1535485166619daff&oe=5D756045")
-            context!!.startActivity(intent)
+            var categoryintent = Intent(activity, CategoryDetailActivity::class.java);
+            categoryintent.putExtra("title", "수질")
+            categoryintent.putExtra(
+                "main_img", R.drawable.img_category_water)
+            context!!.startActivity(categoryintent)
         }
         imgcategory5.setOnClickListener {
-            var intent = Intent(activity, CategoryDetailActivity::class.java);
-            intent.putExtra("title", "카테고리5")
-            intent.putExtra("main_img","https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/58383648_1714122605401284_8261916106969579520_o.jpg?_nc_cat=107&_nc_ht=scontent-icn1-1.xx&oh=5685d155cc3622b1535485166619daff&oe=5D756045")
-            context!!.startActivity(intent)
+            var categoryintent = Intent(activity, CategoryDetailActivity::class.java);
+            categoryintent.putExtra("title", "생태계")
+            categoryintent.putExtra(
+                "main_img",
+                R.drawable.img_category_ecology)
+            context!!.startActivity(categoryintent)
         }
 
-        var ChallengeList: ArrayList<ChallengeData> = ArrayList()
-        ChallengeList.add(ChallengeData(
-            "http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
-            "희원이와 함께하는 에코챌린지", "용이 작은누나",127))
-        ChallengeList.add(ChallengeData(
-            "http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
-            "희원이와 함께하는 에코챌린지", "용이 작은누나",127))
-        ChallengeList.add(ChallengeData(
-            "http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
-            "희원이와 함께하는 에코챌린지", "용이 작은누나",127))
-        ChallengeList.add(ChallengeData(
-            "http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
-            "희원이와 함께하는 에코챌린지", "용이 작은누나",127))
-        ChallengeList.add(ChallengeData(
-            "http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
-            "희원이와 함께하는 에코챌린지", "용이 작은누나",127))
-        ChallengeList.add(ChallengeData(
-            "http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
-            "희원이와 함께하는 에코챌린지", "용이 작은누나",127))
-        ChallengeList.add(ChallengeData(
-            "http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
-            "희원이와 함께하는 에코챌린지", "용이 작은누나",127))
-        ChallengeList.add(ChallengeData(
-            "http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
-            "희원이와 함께하는 에코챌린지", "용이 작은누나",127))
-        ChallengeList.add(ChallengeData(
-            "http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
-            "희원이와 함께하는 에코챌린지", "용이 작은누나",127))
-        ChallengeList.add(ChallengeData(
-            "http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
-            "희원이와 함께하는 에코챌린지", "용이 작은누나",127))
+    }
 
-        rvChallengeAdapter = RVChallengeAdapter(context!!,ChallengeList)
-        rv_top10.adapter = rvChallengeAdapter
-        rv_top10.layoutManager=LinearLayoutManager(context!!)
+    private fun getTop10ChallengeListResponse(){
+        val getTop10ChallengeListResponse = networkService.getTop10ChallengeListResponse(
+            "application/json")
+        getTop10ChallengeListResponse.enqueue(object :Callback<GetTop10ChallengeListResponse>{
+            override fun onFailure(call: Call<GetTop10ChallengeListResponse>, t:Throwable){
+                Log.e("Top10 List Fail",t.toString())
+            }
+            override fun onResponse(
+                call: Call<GetTop10ChallengeListResponse>,
+                response: Response<GetTop10ChallengeListResponse>
+            ) {
+                if (response.isSuccessful) {
+                    if (response.body()!!.status == 200) {
+                        val tmp: ArrayList<ChallengeData> = response.body()!!.data!!
+                        rvChallengeAdapter.challengeList = tmp
+                        rvChallengeAdapter.notifyDataSetChanged()
+                    }
+                }
+            }
 
+        })
     }
 
     private fun configureAdvertiseTab() {
@@ -116,6 +139,7 @@ class AllurthFragment : Fragment() {
 
     }
 }
+
 
 
 
