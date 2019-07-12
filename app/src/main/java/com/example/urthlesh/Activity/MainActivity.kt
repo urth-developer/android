@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
             var intent = Intent(this, CameraActivity::class.java)
             startActivity(intent)
         }*/
-        setToolbarVisibility(View.GONE)
+//        setToolbarVisibility(View.GONE)
         configureMainTab()
     }
 
@@ -100,21 +100,21 @@ class MainActivity : AppCompatActivity() {
 
         vp_main.adapter= ProductMainPagerAdapter(this,supportFragmentManager, 4)
         vp_main.offscreenPageLimit=2
-        vp_main.addOnPageChangeListener(object: ViewPager.OnPageChangeListener{
-            override fun onPageScrollStateChanged(p0: Int) {
-            }
-
-            override fun onPageScrolled(p0: Int, p1: Float, p2: Int) {
-            }
-
-            override fun onPageSelected(p0: Int) {
-                if(p0 == 0) setToolbarVisibility(View.GONE)
-                else if(p0 == 1) setToolbarVisibility(View.VISIBLE)
-                else if(p0 == 2) setToolbarVisibility(View.VISIBLE)
-                else if(p0 == 3) setToolbarVisibility(View.VISIBLE)
-            }
-
-        })
+//        vp_main.addOnPageChangeListener(object: ViewPager.OnPageChangeListener{
+//            override fun onPageScrollStateChanged(p0: Int) {
+//            }
+//
+//            override fun onPageScrolled(p0: Int, p1: Float, p2: Int) {
+//            }
+//
+//            override fun onPageSelected(p0: Int) {
+////                if(p0 == 0) setToolbarVisibility(View.GONE)
+////                else if(p0 == 1) setToolbarVisibility(View.VISIBLE)
+////                else if(p0 == 2) setToolbarVisibility(View.VISIBLE)
+////                else if(p0 == 3) setToolbarVisibility(View.VISIBLE)
+//            }
+//
+//        })
         tl_main.setupWithViewPager(vp_main)
 
         val navCategoryMainLayout: View =(this.getSystemService(android.content.Context.LAYOUT_INFLATER_SERVICE)as LayoutInflater)
@@ -125,11 +125,11 @@ class MainActivity : AppCompatActivity() {
         tl_main.getTabAt(3)!!.customView=navCategoryMainLayout.findViewById(R.id.rl_nav_main_mypage) as RelativeLayout
 
     }
-
-    fun setToolbarVisibility(visiblitilty:Int){
-
-        toolbar_main.visibility=visiblitilty
-    }
+//
+//    fun setToolbarVisibility(visiblitilty:Int){
+//
+//        toolbar_main.visibility=visiblitilty
+//    }
 
 
 

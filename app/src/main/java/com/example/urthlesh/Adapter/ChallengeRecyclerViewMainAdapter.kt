@@ -37,7 +37,6 @@ class ChallengeRecyclerViewMainAdapter(val ctx:Context,val dataList:ArrayList<Ho
     override fun onBindViewHolder(holder: Holder, position: Int){
         if(position!=0&&position!=dataList.size-1){
         holder.container.setOnClickListener {
-
             SharedPreferenceControler.setUserChallengeIdx(ctx,dataList[position].challengeIdx)
             ctx.startActivity<CameraActivity>()
         }}

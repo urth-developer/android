@@ -31,7 +31,7 @@ object SharedPreferenceControler {
     }
     fun getUsrChallengeIdx(ctx:Context):Int{
         val preferences:SharedPreferences=ctx.getSharedPreferences(MY_CHALLENGE_IDX,Context.MODE_PRIVATE)
-        return preferences.getInt("u_chall_idx",1)
+        return preferences.getInt("u_chall_idx",3)
 
     }
 }
