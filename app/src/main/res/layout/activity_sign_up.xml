@@ -13,14 +13,14 @@
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="289.8dp"
-
             android:orientation="vertical"
             android:background="@drawable/bg_loginsignin">
 
 
         <ImageButton
+                android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
-                android:id="@+id/btn_cancel_white"
+                android:id="@+id/signup_back"
                 android:contentDescription="@string/description_info"
                 style="@android:style/Widget.Material.Light.Button.Borderless"
                 android:scaleType="fitXY"
@@ -30,9 +30,6 @@
                 android:layout_gravity="top|right"
                 android:src="@drawable/btn_cancel_white"
         />
-
-
-
 
 
     </LinearLayout>
@@ -85,15 +82,14 @@
 
 
         <EditText
+                android:hint="비밀번호를 입력하세요"
                 android:id="@+id/edtSignIninPW"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="비밀번호를 입력하세요"
                 android:textColor="#b0b0b0"
                 android:layout_marginTop="10dp"
                 android:textSize="12sp"
         />
-
 
 
         <TextView
@@ -110,22 +106,21 @@
 
 
         <EditText
+                android:hint="한글, 숫자 8자 이내로 공백없이 입력하세요"
                 android:id="@+id/edtSignInNickName"
                 android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="한글, 숫자 8자 이내로 공백없이 입력하세요"
-                android:paddingTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:textSize="16sp"
+                android:textColor="#b0b0b0"
+                android:textSize="12sp"
         />
 
         <ImageButton
                 android:id="@+id/btn_startstart"
                 android:background="@color/transparent"
-                android:adjustViewBounds="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:layout_width="166dp"
+                android:layout_height="56dp"
                 android:layout_gravity="center"
                 android:src="@drawable/btn_signin"
                 android:layout_marginTop="30dp"

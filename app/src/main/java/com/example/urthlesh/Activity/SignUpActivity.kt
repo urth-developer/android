@@ -28,6 +28,10 @@ class SignUpActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
 
+        signup_back.setOnClickListener {
+            finish()
+        }
+
         btn_startstart.setOnClickListener {
 
             val signup_u_id: String=edtSignInID.text.toString()

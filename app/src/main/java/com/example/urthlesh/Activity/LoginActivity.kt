@@ -32,19 +32,20 @@ class LoginActivity : AppCompatActivity() {
         btn_startstartstart.setOnClickListener {
             val login_u_id = edtLoginID.text.toString()
             val login_u_pw: String = edtLoginPW.text.toString()
-            Log.e("loginid",login_u_id)
-            Log.e("loginpw",login_u_pw)
-            if(isValid(login_u_id,login_u_pw))postLoginResponse(login_u_id,login_u_pw)
+            Log.e("loginid", login_u_id)
+            Log.e("loginpw", login_u_pw)
+            if (isValid(login_u_id, login_u_pw)) postLoginResponse(login_u_id, login_u_pw)
 
-            postLoginResponse(login_u_id, login_u_pw)
-            startActivity<MainActivity>()
+
         }
+
 
 
         txtLoginSignup.setOnClickListener {
             val intent = Intent(this@LoginActivity, SignUpActivity::class.java)
             startActivity(intent)
         }
+
     }
     fun isValid(u_id:String,u_pw:String):Boolean
     {
@@ -87,4 +88,6 @@ class LoginActivity : AppCompatActivity() {
 
 
     }
+
+
 }

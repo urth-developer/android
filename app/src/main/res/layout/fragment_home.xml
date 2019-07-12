@@ -13,7 +13,8 @@
 
     >
         <RelativeLayout
-                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
         android:gravity="center_horizontal">
             <!--===하단=============================================-->
 
@@ -114,11 +115,7 @@
 
 
                         />
-                        <ImageView
-                                android:layout_width="20dp" android:layout_height="2dp"
-                                android:background="#ffffff"
-                                android:layout_marginTop="10dp"
-                                android:layout_alignParentLeft="true"></ImageView>
+
                     </LinearLayout>
 
                     <Button
@@ -130,34 +127,41 @@
                             android:layout_alignParentBottom="true"
                             android:background="#ffffff"/>
                 </RelativeLayout>
+
                 <!--=================RecyclerView 시작===================-->
                 <LinearLayout
                         android:layout_marginTop="-10dp"
 
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                          android:orientation="vertical">
+
+
+                <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv_home_challenge"
+                        android:layout_gravity="center_horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical" >
-
-
-                    <android.support.v7.widget.RecyclerView
-                            android:layout_gravity="center_horizontal"
-                            android:id="@+id/rv_home_dot"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
-                    <android.support.v7.widget.RecyclerView
-                            android:layout_gravity="center_horizontal"
-                            android:id="@+id/rv_home_challenge"
-                            android:layout_width="match_parent"
-                            android:layout_height="300dp"></android.support.v7.widget.RecyclerView>
-                </LinearLayout>
+                        android:layout_height="300dp"></android.support.v7.widget.RecyclerView>
+                <android.support.v7.widget.RecyclerView
+                        android:layout_gravity="center_horizontal"
+                        android:id="@+id/rv_home_dot"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
             </LinearLayout>
+        </LinearLayout>
         </RelativeLayout>
+        <!--===========//라운드 상단===============-->
+
         <!--==오늘의 추천 챌린지 시작==-->
         <android.support.v7.widget.RecyclerView
                 android:id="@+id/rv_home_todayChallenge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
         ></android.support.v7.widget.RecyclerView>
+
+
+
+
+
 
     </LinearLayout>
 

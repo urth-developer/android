@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <android.support.v7.widget.Toolbar
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
@@ -9,11 +10,13 @@
                   android:orientation="horizontal" android:gravity="right|center">
         <ImageButton
                 android:layout_marginRight="10dp"
-                android:id="@+id/profile_edit_back"
+                android:id="@+id/camera_complement_back"
                 android:background="@color/transparent"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:scaleType="fitXY"
                 android:layout_marginTop="5dp"
+                android:layout_gravity="left"
                 android:src="@drawable/btn_cancel" />
 
 

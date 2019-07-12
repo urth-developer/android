@@ -31,21 +31,23 @@ class IndicatorAdapter(val context: Context,var dataList:ArrayList<Homechallenge
       }
     fun setItenIndex(position :Int)
     {
-        indexList[index]=false
-        indexList[position+1]=true
+        if(indexList.size > index) indexList[index]=false
+        if(indexList.size > position + 1) indexList[position+1] = true
         index=position+1
         notifyDataSetChanged()
     }
 
     override fun onBindViewHolder(holder: IndexListViewHolder, position: Int) {
-        Log.v("eunbini",position.toString())
+        Log.v("eunbini", position.toString())
+        if (position < indexList.size) {
             val asset = context.resources.getDrawable(
-                if(position==0||position==dataList.size-1) R.drawable.trans_circle
-                else if(indexList[position]) R.drawable.fill_circle
+                if (position == 0 || position == dataList.size - 1) R.drawable.trans_circle
+                else if (indexList[position]) R.drawable.fill_circle
                 else R.drawable.stoke_circle
-       )
-        holder.bind(asset)
+            )
+            holder.bind(asset)
         }
+    }
     inner class IndexListViewHolder(itemView: View):RecyclerView.ViewHolder(itemView)
     {
         val dotsView: View= itemView.findViewById(R.id.img_item_circle) as ImageView
