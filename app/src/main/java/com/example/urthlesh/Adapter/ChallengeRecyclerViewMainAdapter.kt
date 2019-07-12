@@ -16,6 +16,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.example.urthlesh.Data.HomechallengeData
 import android.view.animation.Animation
 import android.view.animation.ScaleAnimation
+import com.example.urthlesh.DB.SharedPreferenceControler
 import com.example.urthlesh.custom_camera.CameraActivity
 import org.jetbrains.anko.startActivity
 
@@ -37,7 +38,8 @@ class ChallengeRecyclerViewMainAdapter(val ctx:Context,val dataList:ArrayList<Ho
         if(position!=0&&position!=dataList.size-1){
         holder.container.setOnClickListener {
 
-            ctx.startActivity<CameraActivity>("challengeIdx" to dataList[position].challengeIdx)
+            SharedPreferenceControler.setUserChallengeIdx(ctx,dataList[position].challengeIdx)
+            ctx.startActivity<CameraActivity>()
         }}
 
     Glide.with(ctx)
