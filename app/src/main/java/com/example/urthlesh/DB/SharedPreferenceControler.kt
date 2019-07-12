@@ -23,6 +23,7 @@ object SharedPreferenceControler {
         editor.clear()
         editor.commit()
     }
+
     fun setUserChallengeIdx(ctx:Context,u_chall_idx:Int){
         val preference: SharedPreferences=ctx.getSharedPreferences(MY_CHALLENGE_IDX,Context.MODE_PRIVATE)
         val editor:SharedPreferences.Editor=preference.edit()
@@ -31,7 +32,7 @@ object SharedPreferenceControler {
     }
     fun getUsrChallengeIdx(ctx:Context):Int{
         val preferences:SharedPreferences=ctx.getSharedPreferences(MY_CHALLENGE_IDX,Context.MODE_PRIVATE)
-        return preferences.getInt("u_chall_idx",3)
+        return preferences.getInt("u_chall_idx",1)
 
     }
 }

@@ -226,8 +226,8 @@ public class Camera2BasicFragment extends Fragment
         @Override
         public void onImageAvailable(ImageReader reader) {
             ByteBuffer buffer = reader.acquireNextImage().getPlanes()[0].getBuffer();
-            CameraActivity.Companion.setMBytes(new byte[buffer.remaining()]);
-            buffer.get(CameraActivity.Companion.getMBytes());
+            CameraActivity.mBytes = new byte[buffer.remaining()];
+            buffer.get(CameraActivity.mBytes);
             // mBackgroundHandler.post(new ImageSaver(reader.acquireNextImage(), mFile));
         }
 
@@ -415,8 +415,8 @@ public class Camera2BasicFragment extends Fragment
     public void onViewCreated(final View view, Bundle savedInstanceState) {
         view.findViewById(R.id.picture).setOnClickListener(this);
         mTextureView = (AutoFitTextureView) view.findViewById(R.id.texture);
-        ImageButton camera_main_back = (ImageButton) view.findViewById(R.id.camera_main_back);
-        camera_main_back.setOnClickListener(
+        ImageButton backbackback = (ImageButton) view.findViewById(R.id.backbackback);
+        backbackback.setOnClickListener(
                 new Button.OnClickListener() {
                     public void onClick(View v) {
                         getActivity().finish();
@@ -832,7 +832,7 @@ public class Camera2BasicFragment extends Fragment
                     Intent intent = new Intent(getContext(), CameraCheckActivity.class);
                     intent.putExtra("width", proper_length);
                     intent.putExtra("height", proper_length);
-                    getActivity().startActivityForResult(intent, CameraActivity.Companion.getREQUEST_CAMERA_CHECK());
+                    getActivity().startActivityForResult(intent, CameraActivity.REQUEST_CAMERA_CHECK);
                 }
             };
 
