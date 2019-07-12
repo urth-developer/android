@@ -41,6 +41,7 @@
                 <ImageView
                         android:id="@+id/img_challenge_detail"
                         android:src="@drawable/img_challenge_main_test"
+                        android:scaleType="fitXY"
                         android:layout_width="360dp"
                         android:layout_height="360dp"/>
                 <TextView

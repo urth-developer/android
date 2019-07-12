@@ -32,8 +32,6 @@ class ActivityCreateCategory : AppCompatActivity() {
             createnextcontent.putExtra("createcategory",txt_categorytitle.text)
             startActivityForResult(createnextcontent, 127)
 
-            Log.v("honi",createtitle)
-
         }
 
         img_category1.setOnClickListener {

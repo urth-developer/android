@@ -18,6 +18,7 @@ class ChallengeDetailActivity : AppCompatActivity() {
     val networkService: NetworkService by lazy {
         ApplicationController.instance.networkService
     }
+    var challengeDetail: ArrayList<ChallengeData> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,11 +31,11 @@ class ChallengeDetailActivity : AppCompatActivity() {
             finish()
         }
 
-        var challengeList: ArrayList<ChallengeData> = ArrayList()
-        //getChallengeDetailResponse()
+        getChallengeDetailResponse()
+
     }
 
-   /* private fun getChallengeDetailResponse() {
+    private fun getChallengeDetailResponse() {
 
         val getChallengeDetailResponse = networkService.getChallengeDetailResponse(
             "application/json"
@@ -48,14 +49,18 @@ class ChallengeDetailActivity : AppCompatActivity() {
                 call: Call<GetChallengeDetailResponse>,
                 response: Response<GetChallengeDetailResponse>
             ) {
+                Log.v("hee1","통신 시작")
                 if(response.isSuccessful){
                     if(response.body()!!.status == 200){
                         val tmp:ArrayList<ChallengeData> = response.body()!!.data!!
+                        Log.v("hee1",tmp.toString())
+                        challengeDetail = tmp
+
                     }
                 }
             }
 
         })
-    }*/
+    }
 
 }

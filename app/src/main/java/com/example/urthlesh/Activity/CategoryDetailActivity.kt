@@ -26,9 +26,12 @@ class CategoryDetailActivity : AppCompatActivity() {
     val networkService: NetworkService by lazy {
         ApplicationController.instance.networkService
     }
+    var challengeList: ArrayList<ChallengeData> = ArrayList()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(com.example.urthlesh.R.layout.activity_category_detail)
         btn_back_category_detail.setOnClickListener {
             finish()
@@ -38,14 +41,12 @@ class CategoryDetailActivity : AppCompatActivity() {
         img_category_detail_main.setImageResource(intent.getIntExtra("main_img", R.drawable.img_category_dispoable))
 
 
-        var challengeList: ArrayList<ChallengeData> = ArrayList()
+        getCategoryChallengeListResponse()
 
-        rvChallengeAdapter = RVChallengeAdapter(this, challengeList)
-        rv_challenge_category.adapter = rvChallengeAdapter
         val lm = LinearLayoutManager(this)
         rv_challenge_category.layoutManager = lm
         rv_challenge_category.setHasFixedSize(true)
-        getCategoryChallengeListResponse()
+        //getCategoryChallengeListResponse()
 
         if (txt_category_title.text == "일회용품") {
             categoryflag = 1
@@ -74,11 +75,20 @@ class CategoryDetailActivity : AppCompatActivity() {
                 call: Call<GetCategoryChallengeListResponse>,
                 response: Response<GetCategoryChallengeListResponse>
             ) {
+                Log.v("hee1","통신 시작")
                 if (response.isSuccessful) {
+                    //reponse 덩어리 = response.body()
                     if (response.body()!!.status == 200) {
+
                         val tmp: ArrayList<ChallengeData> = response.body()!!.data!!
-                        rvChallengeAdapter.challengeList = tmp
+                        Log.v("hee1",tmp.toString())
+                        challengeList = tmp
+                        //rvChallengeAdapter.challengeList = tmp
+                        rvChallengeAdapter = RVChallengeAdapter(applicationContext, challengeList)
+                        rv_challenge_category.adapter = rvChallengeAdapter
                         rvChallengeAdapter.notifyDataSetChanged()
+
+
                     }
                 }
             }

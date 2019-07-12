@@ -136,7 +136,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="167dp"
-                    android:id="@+id/rv_top10"/>
+                    android:id="@+id/rv_top10_challenge"/>
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 

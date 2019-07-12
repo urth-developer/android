@@ -42,7 +42,7 @@ class ActivityCreateTitle : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 127) {
-            if (resultCode == Activity.RESULT_FIRST_USER) {
+            if (resultCode == Activity.RESULT_CANCELED) {
                 finish()
             }
         }
