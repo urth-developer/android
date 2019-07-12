@@ -8,6 +8,12 @@ import com.example.urthlesh.Network.Post.GetApplyListResponse
 import retrofit2.Call
 import com.example.urthlesh.Fragment.UsurthFragment
 import com.example.urthlesh.Network.Post.*
+import com.example.urthlesh.Network.Post.*
+
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
+import retrofit2.http.*
+
 
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -61,6 +67,16 @@ interface NetworkService {
 
 
 
+
+
+    @Multipart
+    @POST("/urth/auth")
+    fun postCameraResponse(
+        @Header("token") token: String,
+        @Part("challengeIdx") challengeIdx: Int,
+        @Part cmtImg: MultipartBody.Part
+
+    ):Call<PostCameraResponse>
 
 
 }

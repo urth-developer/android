@@ -226,8 +226,8 @@ public class Camera2BasicFragment extends Fragment
         @Override
         public void onImageAvailable(ImageReader reader) {
             ByteBuffer buffer = reader.acquireNextImage().getPlanes()[0].getBuffer();
-            CameraActivity.mBytes = new byte[buffer.remaining()];
-            buffer.get(CameraActivity.mBytes);
+            CameraActivity.Companion.setMBytes(new byte[buffer.remaining()]);
+            buffer.get(CameraActivity.Companion.getMBytes());
             // mBackgroundHandler.post(new ImageSaver(reader.acquireNextImage(), mFile));
         }
 
@@ -832,7 +832,7 @@ public class Camera2BasicFragment extends Fragment
                     Intent intent = new Intent(getContext(), CameraCheckActivity.class);
                     intent.putExtra("width", proper_length);
                     intent.putExtra("height", proper_length);
-                    getActivity().startActivityForResult(intent, CameraActivity.REQUEST_CAMERA_CHECK);
+                    getActivity().startActivityForResult(intent, CameraActivity.Companion.getREQUEST_CAMERA_CHECK());
                 }
             };
 
