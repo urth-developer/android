@@ -1,18 +1,24 @@
 package com.example.urthlesh.Network
 
+import com.example.urthlesh.Network.Post.GetUserResponse
+import com.example.urthlesh.Network.Post.PostLoginResponse
+import com.example.urthlesh.Network.Post.PostSignupResponse
+import com.google.gson.JsonObject
+import com.example.urthlesh.Network.Post.GetApplyListResponse
 import retrofit2.Call
 import com.example.urthlesh.Fragment.UsurthFragment
 import com.example.urthlesh.Network.Post.*
 import com.example.urthlesh.Network.Post.*
 
-
-
-import com.google.gson.JsonObject
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.http.*
 
 
+import retrofit2.http.Body
+import retrofit2.http.GET
+import retrofit2.http.Header
+import retrofit2.http.POST
 interface NetworkService {
     @POST("urth/signin")
     fun postLoginResponse(
@@ -30,6 +36,13 @@ interface NetworkService {
     fun getUrhResultHomeResponse(
         @Header("Content-Type") content_type:String
     ):Call<GetUrthResultHomeResponse>
+
+
+   @GET("/urth/user/mydata")
+    fun getUserResponse(
+        @Header("Content-Type") content_type:String,
+        @Body() body:JsonObject
+    ): Call <GetUserResponse>
 
     @GET("urth/challenge/favorite")
     fun getPostMyFavoriteChallengeResponse(

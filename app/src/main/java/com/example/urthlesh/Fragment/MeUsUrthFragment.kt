@@ -26,6 +26,7 @@ import com.github.mikephil.charting.data.RadarDataSet
 import com.github.mikephil.charting.data.RadarEntry
 import com.github.mikephil.charting.formatter.IAxisValueFormatter
 import com.github.mikephil.charting.interfaces.datasets.IRadarDataSet
+import kotlinx.android.synthetic.main.fragment_me_usurth.view.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -43,8 +44,8 @@ public class MyRender {}
 
 lateinit var timelineRecyclerViewAdapter: TimelineRecyclerViewAdapter
 
-var itemCount = 0
 
+var itemCount = 0
 
 
 
@@ -133,7 +134,7 @@ class MeUsurthFragment : Fragment() {
         DeepCertiList3.add(
             DeepTimeline(
                 "http://sopt.org/wp/wp-content/uploads/2014/01/24_SOPT-LOGO_COLOR-1.png",
-                "텀블러 사용하기"
+                "빈츠 사용하기"
             )
         )
 
@@ -152,18 +153,24 @@ class MeUsurthFragment : Fragment() {
         rv_my_timeline.layoutManager = linearLayoutManager
         var Use1 = UserData(7)
         txt_my_level.text = "Level   " +Use1.level.toString()
-                // txt_my_num.text = "총 " + itemCount.toString() + "회 인증"
+
+        itemCount =0
+        for (item in CertificateList){
+            itemCount += item.list.size
+        }
+        txt_my_num.text = "총 " + itemCount.toString() + "회 인증"
+
+
 
        // chart.setBackgroundColor(Color.rgb(100, 65, 82));
 
         chart.getDescription().setEnabled(false);
 
         chart.setWebLineWidth(1f);
-        //chart.setWebColor(Color.LTGRAY);
+        chart.setWebColor(Color.WHITE);
         chart.setWebLineWidthInner(1f);
         chart.setWebColorInner(Color.WHITE);
         chart.setWebAlpha(100);
-
         // create a custom MarkerView (extend MarkerView) and specify the layout
         // to use for it
 
@@ -182,8 +189,10 @@ class MeUsurthFragment : Fragment() {
             override fun getFormattedValue(value: Float, axis: AxisBase?): String {
                 return mActivities[(value % mActivities.size).toInt()] //as Int];
             }
+
         };
         xAxis.setTextColor(Color.WHITE);
+
 
         var yAxis: YAxis = chart.getYAxis();
         yAxis.setLabelCount(5, false);
@@ -205,7 +214,7 @@ class MeUsurthFragment : Fragment() {
     private fun setData() {
 
         var mul: Float = 80.0f;
-        var min: Float = 20.0f;
+        var min: Float = 0.0f;
         var cnt: Int = 4;
 
         var entries1: ArrayList<RadarEntry> = ArrayList<RadarEntry>()
@@ -217,14 +226,17 @@ class MeUsurthFragment : Fragment() {
             entries1.add(RadarEntry(val1));
         }
 
+
         var set1: RadarDataSet = RadarDataSet(entries1, "Last Week");
-        set1.setColor(Color.rgb(100,100,100));
-        set1.setFillColor(Color.rgb(50,25,10));
-        set1.setDrawFilled(true);
-        set1.setFillAlpha(180);
-        set1.setLineWidth(2f);
-        set1.setDrawHighlightCircleEnabled(true);
-        set1.setDrawHighlightIndicators(false);
+
+        set1.setColor(Color.rgb(72,137,140),89)
+        set1.setFillColor(Color.rgb(72 ,137,140))
+        set1.setDrawFilled(true)
+        set1.setFillAlpha(180)
+        set1.setLineWidth(1f)
+        set1.setDrawHighlightCircleEnabled(true)
+        set1.setDrawHighlightIndicators(false)
+
 
 
 

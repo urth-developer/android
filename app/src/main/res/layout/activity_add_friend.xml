@@ -5,6 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#ffffff"
         android:orientation="vertical"
         tools:context=".Activity.AddFriendActivity">
 
@@ -158,6 +159,7 @@
                     android:layout_marginTop="40dp"
                     android:background="@drawable/btn_search_notfill"
                     android:layout_centerHorizontal="true"
+                    android:clickable="true"
                     android:text="친구 추가"
                     android:textStyle="bold"
                     android:textColor="#15696c"/>

@@ -28,13 +28,13 @@ class FriendListAdapter(val ctx: Context, val friendList: ArrayList<FriendData>)
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
         Glide.with(ctx)
-            .load(friendList[position].friendimg)
+            .load(friendList[position].profileImg)
             .apply(RequestOptions.circleCropTransform())
             .into(holder.friendimg)
 
 
-        holder.friendname.text=friendList[position].friendname
-        holder.friendlevel.text= "Level. "+friendList[position].friendlevel.toString()
+        holder.friendname.text=friendList[position].nickname
+        holder.friendlevel.text= "Level. "+friendList[position].level.toString()
 
 
     }
