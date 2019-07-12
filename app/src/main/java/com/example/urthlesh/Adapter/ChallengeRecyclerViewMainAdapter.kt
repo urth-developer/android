@@ -68,6 +68,25 @@ class ChallengeRecyclerViewMainAdapter(val ctx:Context,val dataList:ArrayList<Ho
         //setAnimation(holder.itemView,position)
 
 /*  if (position == 0 )
+    holder.title.text = dataList[position].name
+
+
+        val totalItems = itemCount
+        val view = holder.itemView
+
+
+//
+//        val adapterPosition = holder.adapterPosition
+//
+//        if (position == adapterPosition) {
+//            holder.itemView.animate().scaleX(1.5f)
+//            holder.itemView.animate().scaleY(1.5f)
+//        }
+
+
+        //setAnimation(holder.itemView,position)
+
+/*  if (position == 0 )
     {
 
         val params: RecyclerView.LayoutParams = (holder.container).layoutParams as RecyclerView.LayoutParams
@@ -80,7 +99,7 @@ class ChallengeRecyclerViewMainAdapter(val ctx:Context,val dataList:ArrayList<Ho
 
         if (position == 1) {
             val params: RecyclerView.LayoutParams = (holder.container).layoutParams as RecyclerView.LayoutParams
-            params.leftMargin = 20
+            params.leftMargin = 10
 
             holder.container.setLayoutParams(params)
         }
@@ -92,8 +111,8 @@ class ChallengeRecyclerViewMainAdapter(val ctx:Context,val dataList:ArrayList<Ho
 
             holder.container.setLayoutParams(params)
 
-        }*/
-    }
+        }
+    }*/*/
 
         inner class Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {
             val container =
